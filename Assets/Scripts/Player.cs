@@ -8,6 +8,8 @@ public class Player : MonoBehaviour
 
     public CharacterController myController;
 
+    public float mouseSensitivity = 100f;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -18,6 +20,10 @@ public class Player : MonoBehaviour
     void Update()
     {
         PlayerMovement();
+
+        float mouseX = Input.GetAxisRaw("Mouse X") * mouseSensitivity * Time.deltaTime;
+
+        transform.Rotate(Vector3.up * mouseX);
     }
 
     void PlayerMovement() 
