@@ -22,7 +22,11 @@ public class Player : MonoBehaviour
     void Update()
     {
         PlayerMovement();
+        CameraMovement();
+    }
 
+    private void CameraMovement()
+    {
         float mouseX = Input.GetAxisRaw("Mouse X") * mouseSensitivity * Time.deltaTime;
         float mouseY = Input.GetAxisRaw("Mouse Y") * mouseSensitivity * Time.deltaTime;
 
