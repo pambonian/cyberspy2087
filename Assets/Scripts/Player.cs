@@ -53,6 +53,7 @@ public class Player : MonoBehaviour
                 firePosition.LookAt(myCameraHead.position + (myCameraHead.forward * 50f));
             }
 
+            Instantiate(muzzleFlash, firePosition.position, firePosition.rotation, firePosition);
             Instantiate(bullet, firePosition.position, firePosition.rotation);
         }
     }
