@@ -247,8 +247,8 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 281835400}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0.325, y: -0.335, z: 0.585}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0.325, y: -0.33500004, z: 0.58500004}
   m_LocalScale: {x: 0.14097127, y: 0.13754809, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -872,7 +872,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e04d08f8b5f6dd5439fed87df818b132, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 0.21
+  speed: 9.54
   myRigidBody: {fileID: 741001556}
 --- !u!135 &741001552
 SphereCollider:
