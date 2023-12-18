@@ -1486,6 +1486,8 @@ MonoBehaviour:
   mouseSensitivity: 700
   bullet: {fileID: 1580209032507779253, guid: 73075014519ea1b4291d51e4d2b13440, type: 3}
   firePosition: {fileID: 1039663519}
+  muzzleFlash: {fileID: 1743301284569550, guid: bf932de55bc9b244894a96a195ad52b0, type: 3}
+  bulletHole: {fileID: 1892351807075712, guid: 218932cc643b9b942b408fdbce9c46aa, type: 3}
 --- !u!143 &1114336264
 CharacterController:
   m_ObjectHideFlags: 0
