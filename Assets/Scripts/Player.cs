@@ -45,6 +45,11 @@ public class Player : MonoBehaviour
                 {
 
                     firePosition.LookAt(hit.point);
+
+                    if(hit.collider.CompareTag("Shootable"))
+                    {
+                        Instantiate(bulletHole, hit.point, Quaternion.LookRotation(hit.normal));
+                    }
                 }
             }
             
