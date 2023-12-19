@@ -17,7 +17,7 @@ public class Player : MonoBehaviour
     public GameObject bullet;
     public Transform firePosition;
 
-    public GameObject muzzleFlash, bulletHole;
+    public GameObject muzzleFlash, bulletHole, waterLeak;
 
     // Start is called before the first frame update
     void Start()
@@ -45,6 +45,16 @@ public class Player : MonoBehaviour
                 {
 
                     firePosition.LookAt(hit.point);
+
+                    if(hit.collider.CompareTag("Shootable"))
+                    {
+                        Instantiate(bulletHole, hit.point, Quaternion.LookRotation(hit.normal));
+                    }
+
+                    if(hit.collider.CompareTag("WaterLeaker"))
+                    {
+                        Instantiate(waterLeak, hit.point, Quaternion.LookRotation(hit.normal));
+                    }
                 }
             }
             
