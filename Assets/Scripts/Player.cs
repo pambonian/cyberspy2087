@@ -23,6 +23,8 @@ public class Player : MonoBehaviour
 
     public GameObject muzzleFlash, bulletHole, waterLeak;
 
+    public float jumpHeight = 10f;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -34,7 +36,16 @@ public class Player : MonoBehaviour
     {
         PlayerMovement();
         CameraMovement();
+        Jump();
         Shoot();
+    }
+
+    void Jump()
+    {
+        if(Input.GetButtonDown("Jump"))
+        {
+            velocity.y = jumpHeight;
+        }
     }
 
     private void Shoot()
