@@ -23,6 +23,13 @@ public class Player : MonoBehaviour
 
     public GameObject muzzleFlash, bulletHole, waterLeak;
 
+    // jumping section
+    public float jumpHeight = 10f;
+    private bool readyToJump;
+    public Transform ground;
+    public LayerMask groundLayer;
+    public float groundDistance = 0.5f;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -34,7 +41,20 @@ public class Player : MonoBehaviour
     {
         PlayerMovement();
         CameraMovement();
+        Jump();
         Shoot();
+    }
+
+    void Jump()
+    {
+        readyToJump = Physics.OverlapSphere(ground.position, groundDistance, groundLayer).Length > 0;
+
+        if(Input.GetButtonDown("Jump") && readyToJump)
+        {
+            velocity.y = Mathf.Sqrt(jumpHeight * -2f * Physics.gravity.y) * Time.deltaTime;
+        }
+
+        myController.Move(velocity);
     }
 
     private void Shoot()
