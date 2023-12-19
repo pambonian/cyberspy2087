@@ -56,6 +56,11 @@ public class Player : MonoBehaviour
                         Instantiate(waterLeak, hit.point, Quaternion.LookRotation(hit.normal));
                     }
                 }
+
+                if (hit.collider.CompareTag("Enemy"))
+                {
+                    Destroy(hit.collider.gameObject);
+                }
             }
             
             else
