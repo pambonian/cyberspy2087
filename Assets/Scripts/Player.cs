@@ -23,17 +23,24 @@ public class Player : MonoBehaviour
 
     public GameObject muzzleFlash, bulletHole, waterLeak;
 
-    // jumping section
+    // jumping values
     public float jumpHeight = 10f;
     private bool readyToJump;
     public Transform ground;
     public LayerMask groundLayer;
     public float groundDistance = 0.5f;
 
+    // crouching values
+    private Vector3 crouchScale = new Vector3(1, 0.5f, 1);
+    private Vector3 playerScale;
+    public float crouchSpeed = 6f;
+    private bool isCrouching = false;
+
     // Start is called before the first frame update
     void Start()
     {
-        // Start Contents
+        // get initial player scale for crouching
+        playerScale = transform.localScale;
     }
 
     // Update is called once per frame
@@ -43,8 +50,38 @@ public class Player : MonoBehaviour
         CameraMovement();
         Jump();
         Shoot();
+        Crouching();
     }
 
+    // crouching method
+    private void Crouching()
+    {
+        // start crouch
+        if (Input.GetKeyDown(KeyCode.LeftControl))
+        {
+            StartCrouching();
+        } 
+
+        // end crouch
+        if (Input.GetKeyUp(KeyCode.LeftControl))
+        {
+            StopCrouching();
+        }
+    }
+
+    private void StartCrouching()
+    {
+        transform.localScale = crouchScale;
+        isCrouching= true;
+    }
+
+    private void StopCrouching()
+    {
+        transform.localScale = playerScale;
+        isCrouching= false;
+    }
+
+    // jumping method
     void Jump()
     {
         readyToJump = Physics.OverlapSphere(ground.position, groundDistance, groundLayer).Length > 0;
@@ -115,9 +152,20 @@ public class Player : MonoBehaviour
         float z = Input.GetAxis("Vertical");
 
         Vector3 movement = x * transform.right + z * transform.forward;
-        movement = movement * speed * Time.deltaTime;
+
+        if (isCrouching)
+        {
+            movement = movement * crouchSpeed * Time.deltaTime;
+        }
+        else
+        {
+            movement = movement * speed * Time.deltaTime;
+        }
 
         myController.Move(movement);
+
+       
+        // gravity (stay the hell away from me)
 
         velocity.y += Physics.gravity.y * Mathf.Pow(Time.deltaTime, 2) * gravityModifier;
 
