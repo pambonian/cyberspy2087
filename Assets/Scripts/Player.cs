@@ -45,6 +45,7 @@ public class Player : MonoBehaviour
         Shoot();
     }
 
+    // jumping method
     void Jump()
     {
         readyToJump = Physics.OverlapSphere(ground.position, groundDistance, groundLayer).Length > 0;
