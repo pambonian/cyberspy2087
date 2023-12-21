@@ -1383,7 +1383,7 @@ Camera:
   m_Depth: -1
   m_CullingMask:
     serializedVersion: 2
-    m_Bits: 4294967295
+    m_Bits: 119
   m_RenderingPath: -1
   m_TargetTexture: {fileID: 0}
   m_TargetDisplay: 0
@@ -1787,6 +1787,7 @@ GameObject:
   - component: {fileID: 1114336265}
   - component: {fileID: 1114336264}
   - component: {fileID: 1114336263}
+  - component: {fileID: 1114336266}
   m_Layer: 0
   m_Name: Player
   m_TagString: Untagged
@@ -1806,18 +1807,19 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 350a29e6dbd2557458be66e914556c6a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 20
+  speed: 10
   velocity: {x: 0, y: 0, z: 0}
-  gravityModifier: 6
+  gravityModifier: 5
   myController: {fileID: 1114336264}
   myCameraHead: {fileID: 1145313882}
+  myAnimator: {fileID: 1114336266}
   mouseSensitivity: 500
   bullet: {fileID: 1580209032507779253, guid: 73075014519ea1b4291d51e4d2b13440, type: 3}
   firePosition: {fileID: 1039663519}
   muzzleFlash: {fileID: 1743301284569550, guid: bf932de55bc9b244894a96a195ad52b0, type: 3}
   bulletHole: {fileID: 1000010355441670, guid: b63f824d363dc944ebaf1e221c6b00e5, type: 3}
   waterLeak: {fileID: 5933849919616007023, guid: 29a8a4ff326c8f24bb37eb23ea155ddd, type: 3}
-  jumpHeight: 1
+  jumpHeight: 4
   ground: {fileID: 1783915152}
   groundLayer:
     serializedVersion: 2
@@ -1861,6 +1863,26 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!95 &1114336266
+Animator:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1114336262}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 4ee2e44bf42e6c748ac6d049731725b3, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!1 &1145313881
 GameObject:
   m_ObjectHideFlags: 0
@@ -2570,7 +2592,7 @@ GameObject:
   - component: {fileID: 2108751060}
   - component: {fileID: 2108751062}
   - component: {fileID: 2108751061}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Eyes
   m_TagString: Untagged
   m_Icon: {fileID: 0}
