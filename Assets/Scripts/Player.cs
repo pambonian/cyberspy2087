@@ -183,7 +183,7 @@ public class Player : MonoBehaviour
         myController.Move(movement);
 
        
-        // gravity (stay the hell away from me)
+        // gravity ... (stay the hell away from me)
 
         velocity.y += Physics.gravity.y * Mathf.Pow(Time.deltaTime, 2) * gravityModifier;
 
