@@ -1807,7 +1807,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 350a29e6dbd2557458be66e914556c6a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 10
+  speed: 20
+  runSpeed: 50
   velocity: {x: 0, y: 0, z: 0}
   gravityModifier: 5
   myController: {fileID: 1114336264}
