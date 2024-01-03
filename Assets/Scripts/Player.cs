@@ -42,6 +42,7 @@ public class Player : MonoBehaviour
 
     // sliding values
     public bool isRunning = false;
+    public float slideSpeed = 30f;
 
     // Start is called before the first frame update
     void Start()
@@ -84,6 +85,11 @@ public class Player : MonoBehaviour
 
         myController.height /= 2;
         isCrouching= true;
+
+        if(isRunning)
+        {
+            velocity = Vector3.ProjectOnPlane(myCameraHead.transform.forward, Vector3.up).normalized * slideSpeed * Time.deltaTime;
+        }
     }
 
     private void StopCrouching()
