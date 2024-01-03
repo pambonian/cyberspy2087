@@ -40,6 +40,9 @@ public class Player : MonoBehaviour
     public float crouchSpeed = 6f;
     private bool isCrouching = false;
 
+    // sliding values
+    public bool isRunning = false;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -167,6 +170,7 @@ public class Player : MonoBehaviour
         if(Input.GetKey(KeyCode.LeftShift) && !isCrouching)
         {
             movement = movement * runSpeed * Time.deltaTime;
+            isRunning = true;
         }
         else if (isCrouching)
         {
@@ -175,6 +179,7 @@ public class Player : MonoBehaviour
         else
         {
             movement = movement * speed * Time.deltaTime;
+            isRunning = false;
         }
 
         myAnimator.SetFloat("PlayerSpeed", movement.magnitude);
