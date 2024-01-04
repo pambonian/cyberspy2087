@@ -40,6 +40,11 @@ public class Player : MonoBehaviour
     public float crouchSpeed = 6f;
     private bool isCrouching = false;
 
+    // sliding values
+    private bool isRunning = false, startSliderTimer;
+    private float currentSliderTimer, maxSlideTime = 2f;
+    public float slideSpeed = 30f;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -56,19 +61,20 @@ public class Player : MonoBehaviour
         Jump();
         Shoot();
         Crouching();
+        SlideCounter();
     }
 
     // crouching method
     private void Crouching()
     {
         // start crouch
-        if (Input.GetKeyDown(KeyCode.LeftControl))
+        if (Input.GetKeyDown(KeyCode.C))
         {
             StartCrouching();
         } 
 
         // end crouch
-        if (Input.GetKeyUp(KeyCode.LeftControl))
+        if (Input.GetKeyUp(KeyCode.C) || currentSliderTimer > maxSlideTime)
         {
             StopCrouching();
         }
@@ -81,10 +87,20 @@ public class Player : MonoBehaviour
 
         myController.height /= 2;
         isCrouching= true;
+
+        if(isRunning)
+        {
+            velocity = Vector3.ProjectOnPlane(myCameraHead.transform.forward, Vector3.up).normalized * slideSpeed * Time.deltaTime;
+            startSliderTimer = true;
+        }
     }
 
     private void StopCrouching()
     {
+        currentSliderTimer = 0f;
+        velocity = new Vector3(0f, 0f, 0f);
+        startSliderTimer = false;
+
         myBody.localScale = bodyScale;
         myCameraHead.position += new Vector3(0, 1f, 0);
 
@@ -167,6 +183,7 @@ public class Player : MonoBehaviour
         if(Input.GetKey(KeyCode.LeftShift) && !isCrouching)
         {
             movement = movement * runSpeed * Time.deltaTime;
+            isRunning = true;
         }
         else if (isCrouching)
         {
@@ -175,6 +192,7 @@ public class Player : MonoBehaviour
         else
         {
             movement = movement * speed * Time.deltaTime;
+            isRunning = false;
         }
 
         myAnimator.SetFloat("PlayerSpeed", movement.magnitude);
@@ -193,5 +211,13 @@ public class Player : MonoBehaviour
         }
 
         myController.Move(velocity);
+    }
+
+    private void SlideCounter()
+    {
+        if(startSliderTimer)
+        {
+            currentSliderTimer += Time.deltaTime;
+        }
     }
 }

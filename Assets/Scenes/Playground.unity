@@ -1828,6 +1828,11 @@ MonoBehaviour:
   groundDistance: 0.5
   myBody: {fileID: 779812790}
   crouchSpeed: 6.5
+  isRunning: 0
+  startSliderTimer: 0
+  currentSliderTimer: 0
+  maxSlideTime: 2
+  slideSpeed: 10
 --- !u!143 &1114336264
 CharacterController:
   m_ObjectHideFlags: 0
