@@ -14,17 +14,12 @@ public class Player : MonoBehaviour
 
     public CharacterController myController;
     public Transform myCameraHead;
-
     public Animator myAnimator;
 
     public float mouseSensitivity = 100f;
     private float cameraVerticalRotation;
 
-    public GameObject bullet;
-    public Transform firePosition;
-
-    public GameObject muzzleFlash, bulletHole, waterLeak;
-
+    
     // jumping values
     public float jumpHeight = 10f;
     private bool readyToJump;
@@ -59,7 +54,6 @@ public class Player : MonoBehaviour
         PlayerMovement();
         CameraMovement();
         Jump();
-        Shoot();
         Crouching();
         SlideCounter();
     }
@@ -121,46 +115,7 @@ public class Player : MonoBehaviour
         myController.Move(velocity);
     }
 
-    private void Shoot()
-    {
-        if (Input.GetMouseButtonDown(0))
-        {
-            RaycastHit hit;
-
-            if(Physics.Raycast(myCameraHead.position, myCameraHead.forward, out hit, 100f))
-            {
-                if (Vector3.Distance(myCameraHead.position, hit.point) >2f)
-                {
-
-                    firePosition.LookAt(hit.point);
-
-                    if(hit.collider.CompareTag("Shootable"))
-                    {
-                        Instantiate(bulletHole, hit.point, Quaternion.LookRotation(hit.normal));
-                    }
-
-                    if(hit.collider.CompareTag("WaterLeaker"))
-                    {
-                        Instantiate(waterLeak, hit.point, Quaternion.LookRotation(hit.normal));
-                    }
-                }
-
-                if (hit.collider.CompareTag("Enemy"))
-                {
-                    Destroy(hit.collider.gameObject);
-                }
-            }
-            
-            else
-            {
-                firePosition.LookAt(myCameraHead.position + (myCameraHead.forward * 50f));
-            }
-
-            Instantiate(muzzleFlash, firePosition.position, firePosition.rotation, firePosition);
-            Instantiate(bullet, firePosition.position, firePosition.rotation);
-        }
-    }
-
+    
     private void CameraMovement()
     {
         float mouseX = Input.GetAxisRaw("Mouse X") * mouseSensitivity * Time.deltaTime;
