@@ -26,12 +26,19 @@ public class GunSystem : MonoBehaviour
     public float reloadTime;
     public bool reloading;
 
+    // ADS Control
+    public Transform aimPosition;
+    private float aimSpeed = 2f;
+    private Vector3 gunStartPosition;
+
 
     // Start is called before the first frame update
     void Start()
     {
         totalBullets -= magazineSize;
         bulletsAvailable = magazineSize;
+
+        gunStartPosition = transform.localPosition;
 
         myUICanvas = FindObjectOfType<UICanvasController>();
     }
@@ -51,6 +58,14 @@ public class GunSystem : MonoBehaviour
         if(Input.GetKeyDown(KeyCode.R) && bulletsAvailable < magazineSize && !reloading)
         {
             Reload();
+        }
+
+        if(Input.GetMouseButton(1))
+        {
+            transform.position = Vector3.MoveTowards(transform.position, aimPosition.position, aimSpeed * Time.deltaTime);
+        } else
+        {
+            transform.localPosition = Vector3.MoveTowards(transform.localPosition, gunStartPosition, aimSpeed * Time.deltaTime);
         }
     }
 
@@ -146,7 +161,5 @@ public class GunSystem : MonoBehaviour
         myUICanvas.ammoText.SetText(bulletsAvailable + "/ " + magazineSize);
         myUICanvas.totalAmmoText.SetText(totalBullets.ToString());
     }
-
-
 
 }
