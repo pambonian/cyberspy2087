@@ -2171,8 +2171,13 @@ MonoBehaviour:
   bulletHole: {fileID: 1000010355441670, guid: b63f824d363dc944ebaf1e221c6b00e5, type: 3}
   waterLeak: {fileID: 5933849919616007023, guid: 29a8a4ff326c8f24bb37eb23ea155ddd, type: 3}
   bullet: {fileID: 2301637783011706737, guid: 3a3b2b6dde611c148a7b2324fa087f6b, type: 3}
-  canAutoFire: 1
-  timeBetweenShots: 2
+  canAutoFire: 0
+  timeBetweenShots: 0.1
+  bulletsAvailable: 0
+  totalBullets: 26
+  magazineSize: 10
+  reloadTime: 2
+  reloading: 0
 --- !u!1 &1623266402
 GameObject:
   m_ObjectHideFlags: 0

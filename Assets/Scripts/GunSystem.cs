@@ -1,6 +1,8 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.AI;
 
 public class GunSystem : MonoBehaviour
 {
@@ -16,16 +18,32 @@ public class GunSystem : MonoBehaviour
 
     public float timeBetweenShots;
 
+    public int bulletsAvailable, totalBullets, magazineSize;
+
+    public float reloadTime;
+    public bool reloading;
+
+
     // Start is called before the first frame update
     void Start()
     {
-        
+        totalBullets -= magazineSize;
+        bulletsAvailable = magazineSize;
     }
 
     // Update is called once per frame
     void Update()
     {
         Shoot();
+        GunManager();
+    }
+
+    private void GunManager()
+    {
+        if(Input.GetKeyDown(KeyCode.R) && bulletsAvailable < magazineSize && !reloading)
+        {
+            Reload();
+        }
     }
 
     private void Shoot()
@@ -41,7 +59,7 @@ public class GunSystem : MonoBehaviour
             shooting = Input.GetMouseButtonDown(0);
         }
         // if player is actively shooting the weapon:
-        if (shooting && readyToShoot)
+        if (shooting && readyToShoot && bulletsAvailable > 0 && !reloading)
         {
             readyToShoot = false;
 
@@ -70,11 +88,42 @@ public class GunSystem : MonoBehaviour
             {
                 firePosition.LookAt(myCameraHead.position + (myCameraHead.forward * 50f));
             }
+
+            bulletsAvailable--;
+
+
             Instantiate(muzzleFlash, firePosition.position, firePosition.rotation, firePosition);
             Instantiate(bullet, firePosition.position, firePosition.rotation, firePosition);
 
             StartCoroutine(ResetShot());
+
+
         }
+    }
+
+    private void Reload()
+    {
+        int bulletsToAdd = magazineSize - bulletsAvailable;
+
+        if(totalBullets > bulletsToAdd)
+        {
+            totalBullets -= bulletsToAdd;
+            bulletsAvailable = magazineSize;
+        }
+        else
+        {
+            bulletsAvailable += totalBullets;
+            totalBullets = 0;
+        }
+        reloading = true;
+
+        StartCoroutine(ReloadCoroutine());
+    }
+
+    IEnumerator ReloadCoroutine()
+    {
+        yield return new WaitForSeconds(reloadTime);
+        reloading = false;
     }
 
     IEnumerator ResetShot()
@@ -83,5 +132,7 @@ public class GunSystem : MonoBehaviour
 
         readyToShoot = true;
     }
+
+    
 
 }
