@@ -8,24 +8,41 @@ using Random = UnityEngine.Random;
 public class EnemyAI : MonoBehaviour
 {
     NavMeshAgent myAgent;
-    public LayerMask whatIsGround;
+    public LayerMask whatIsGround, whatIsPlayer;
+    public Transform player;
 
+    // Guarding
     public Vector3 destinationPoint;
     bool destinationSet;
     public float destinationRange;
+
+    // Chasing
+    public float chaseRange;
+    public bool playerInChaseRange;
+
 
 
     // Start is called before the first frame update
     void Start()
     {
+        player == FindObjectOfType<Player>().transform;
         myAgent = GetComponent<NavMeshAgent>();
     }
 
     // Update is called once per frame
     void Update()
     {
-        Guarding();
+        playerInChaseRange = Physics.CheckSphere(transform.position, chaseRange, whatIsPlayer);
+
+        if(!playerInChaseRange)
+        {
+            Guarding();
+        } else if(playerInChaseRange) {
+            ChasingPlayer();
+        }
     }
+
+    
 
     private void Guarding()
     {
@@ -43,6 +60,11 @@ public class EnemyAI : MonoBehaviour
         {
             destinationSet = false;
         }
+    }
+
+    private void ChasingPlayer()
+    {
+        myAgent.SetDestination(player.position);
     }
 
     private void SearchForDestination()
