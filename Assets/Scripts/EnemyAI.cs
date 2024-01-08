@@ -23,6 +23,7 @@ public class EnemyAI : MonoBehaviour
     // Attacking
     public float attackRange;
     private bool playerInAttackRange;
+    public GameObject attackProjectile;
 
 
 
@@ -37,12 +38,19 @@ public class EnemyAI : MonoBehaviour
     void Update()
     {
         playerInChaseRange = Physics.CheckSphere(transform.position, chaseRange, whatIsPlayer);
+        playerInAttackRange = Physics.CheckSphere(transform.position, attackRange, whatIsPlayer);
 
-        if(!playerInChaseRange)
+        if (!playerInChaseRange && !playerInAttackRange)
         {
             Guarding();
-        } else if(playerInChaseRange) {
+        } 
+        if (playerInChaseRange && !playerInAttackRange) 
+        {
             ChasingPlayer();
+        }
+        if(playerInChaseRange && playerInAttackRange)
+        {
+            AttackingPlayer();
         }
     }
 
@@ -69,6 +77,14 @@ public class EnemyAI : MonoBehaviour
     private void ChasingPlayer()
     {
         myAgent.SetDestination(player.position);
+    }
+
+    private void AttackingPlayer()
+    {
+        myAgent.SetDestination(transform.position);
+        transform.LookAt(player);
+
+        Instantiate(attackProjectile, transform.position, Quaternion.identity);
     }
 
     private void SearchForDestination()
