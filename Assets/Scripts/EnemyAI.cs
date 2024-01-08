@@ -20,6 +20,10 @@ public class EnemyAI : MonoBehaviour
     public float chaseRange;
     private bool playerInChaseRange;
 
+    // Attacking
+    public float attackRange;
+    private bool playerInAttackRange;
+
 
 
     // Start is called before the first frame update
