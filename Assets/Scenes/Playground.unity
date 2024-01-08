@@ -553,7 +553,7 @@ GameObject:
   - component: {fileID: 281835404}
   - component: {fileID: 281835403}
   - component: {fileID: 281835402}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Gun
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1441,7 +1441,7 @@ GameObject:
   - component: {fileID: 779812790}
   - component: {fileID: 779812792}
   - component: {fileID: 779812791}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Body
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1550,8 +1550,14 @@ MonoBehaviour:
   whatIsGround:
     serializedVersion: 2
     m_Bits: 64
+  whatIsPlayer:
+    serializedVersion: 2
+    m_Bits: 128
+  player: {fileID: 1114336265}
   destinationPoint: {x: 0, y: 0, z: 0}
   destinationRange: 100
+  chaseRange: 30
+  playerInChaseRange: 0
 --- !u!195 &869464445
 NavMeshAgent:
   m_ObjectHideFlags: 0
@@ -1711,7 +1717,7 @@ Camera:
   m_Depth: -1
   m_CullingMask:
     serializedVersion: 2
-    m_Bits: 119
+    m_Bits: 247
   m_RenderingPath: -1
   m_TargetTexture: {fileID: 0}
   m_TargetDisplay: 0
@@ -1972,7 +1978,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1039663519}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Firing Position
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2236,7 +2242,7 @@ GameObject:
   - component: {fileID: 1114336264}
   - component: {fileID: 1114336263}
   - component: {fileID: 1114336266}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Player
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2337,7 +2343,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1145313882}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Head
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2678,7 +2684,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1423941256}
   - component: {fileID: 1423941257}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Pistol
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2738,7 +2744,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1623266403}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Guns
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3190,7 +3196,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1681756835}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Pistol Prefab
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3208,7 +3214,7 @@ GameObject:
   - component: {fileID: 1681756851}
   - component: {fileID: 1678365331}
   - component: {fileID: 1679331411}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: P_Body
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3226,7 +3232,7 @@ GameObject:
   - component: {fileID: 1681756853}
   - component: {fileID: 1678365333}
   - component: {fileID: 1679331413}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: P_Light
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3244,7 +3250,7 @@ GameObject:
   - component: {fileID: 1681756855}
   - component: {fileID: 1678365335}
   - component: {fileID: 1679331415}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: P_Hammer
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3262,7 +3268,7 @@ GameObject:
   - component: {fileID: 1681756857}
   - component: {fileID: 1678365337}
   - component: {fileID: 1679331417}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: P_Sight
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3280,7 +3286,7 @@ GameObject:
   - component: {fileID: 1681756859}
   - component: {fileID: 1678365339}
   - component: {fileID: 1679331419}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: P_Magazine
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3298,7 +3304,7 @@ GameObject:
   - component: {fileID: 1681756861}
   - component: {fileID: 1678365341}
   - component: {fileID: 1679331421}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: P_Trigger
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3316,7 +3322,7 @@ GameObject:
   - component: {fileID: 1681756863}
   - component: {fileID: 1678365343}
   - component: {fileID: 1679331423}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: P_Slide
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3569,7 +3575,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1717168706}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Aim Position
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3600,7 +3606,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1783915152}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Ground
   m_TagString: Untagged
   m_Icon: {fileID: 0}
