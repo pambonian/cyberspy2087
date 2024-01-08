@@ -25,7 +25,7 @@ public class EnemyAI : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        player == FindObjectOfType<Player>().transform;
+        player = FindObjectOfType<Player>().transform;
         myAgent = GetComponent<NavMeshAgent>();
     }
 
