@@ -20,6 +20,11 @@ public class EnemyAI : MonoBehaviour
     public float chaseRange;
     private bool playerInChaseRange;
 
+    // Attacking
+    public float attackRange;
+    private bool playerInAttackRange;
+    public GameObject attackProjectile;
+
 
 
     // Start is called before the first frame update
@@ -33,12 +38,19 @@ public class EnemyAI : MonoBehaviour
     void Update()
     {
         playerInChaseRange = Physics.CheckSphere(transform.position, chaseRange, whatIsPlayer);
+        playerInAttackRange = Physics.CheckSphere(transform.position, attackRange, whatIsPlayer);
 
-        if(!playerInChaseRange)
+        if (!playerInChaseRange && !playerInAttackRange)
         {
             Guarding();
-        } else if(playerInChaseRange) {
+        } 
+        if (playerInChaseRange && !playerInAttackRange) 
+        {
             ChasingPlayer();
+        }
+        if(playerInChaseRange && playerInAttackRange)
+        {
+            AttackingPlayer();
         }
     }
 
@@ -67,6 +79,14 @@ public class EnemyAI : MonoBehaviour
         myAgent.SetDestination(player.position);
     }
 
+    private void AttackingPlayer()
+    {
+        myAgent.SetDestination(transform.position);
+        transform.LookAt(player);
+
+        Instantiate(attackProjectile, transform.position, Quaternion.identity);
+    }
+
     private void SearchForDestination()
     {
         // Create a random point for our agent to walk towards
@@ -89,5 +109,8 @@ public class EnemyAI : MonoBehaviour
     {
         Gizmos.color = Color.yellow;
         Gizmos.DrawWireSphere(transform.position, chaseRange);
+
+        Gizmos.color = Color.red;
+        Gizmos.DrawWireSphere(transform.position, attackRange);
     }
 }

@@ -1556,8 +1556,9 @@ MonoBehaviour:
   player: {fileID: 1114336265}
   destinationPoint: {x: 0, y: 0, z: 0}
   destinationRange: 100
-  chaseRange: 30
-  playerInChaseRange: 0
+  chaseRange: 26.3
+  attackRange: 13.07
+  attackProjectile: {fileID: 967503742761938130, guid: 10ed0b3dd85c3304595c598070730be1, type: 3}
 --- !u!195 &869464445
 NavMeshAgent:
   m_ObjectHideFlags: 0
