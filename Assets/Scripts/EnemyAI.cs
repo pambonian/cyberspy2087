@@ -18,7 +18,7 @@ public class EnemyAI : MonoBehaviour
 
     // Chasing
     public float chaseRange;
-    public bool playerInChaseRange;
+    private bool playerInChaseRange;
 
 
 
@@ -83,5 +83,11 @@ public class EnemyAI : MonoBehaviour
         {
             destinationSet = true;
         }
+    }
+
+    private void OnDrawGizmosSelected()
+    {
+        Gizmos.color = Color.yellow;
+        Gizmos.DrawWireSphere(transform.position, chaseRange);
     }
 }

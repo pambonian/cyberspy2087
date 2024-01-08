@@ -1550,8 +1550,14 @@ MonoBehaviour:
   whatIsGround:
     serializedVersion: 2
     m_Bits: 64
+  whatIsPlayer:
+    serializedVersion: 2
+    m_Bits: 128
+  player: {fileID: 1114336265}
   destinationPoint: {x: 0, y: 0, z: 0}
   destinationRange: 100
+  chaseRange: 30
+  playerInChaseRange: 0
 --- !u!195 &869464445
 NavMeshAgent:
   m_ObjectHideFlags: 0
