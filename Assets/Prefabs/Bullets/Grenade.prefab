@@ -9,10 +9,11 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 967503742761938133}
+  - component: {fileID: -1473159411747047521}
   - component: {fileID: 967503742761938132}
   - component: {fileID: 3256376458440141527}
   - component: {fileID: 449947094}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Grenade
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -35,6 +36,20 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &-1473159411747047521
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 967503742761938130}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 650418e6c4c86f748aff224397248bf5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  upForce: 8
+  forwardForce: 32
 --- !u!135 &967503742761938132
 SphereCollider:
   m_ObjectHideFlags: 0
@@ -183,7 +198,7 @@ GameObject:
   - component: {fileID: 967503743421302611}
   - component: {fileID: 967503743421302612}
   - component: {fileID: 967503743421302613}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Sphere
   m_TagString: Untagged
   m_Icon: {fileID: 0}

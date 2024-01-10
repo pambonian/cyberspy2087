@@ -1558,6 +1558,7 @@ MonoBehaviour:
   destinationRange: 100
   chaseRange: 26.3
   attackRange: 13.07
+  attackTime: 1
   attackProjectile: {fileID: 967503742761938130, guid: 10ed0b3dd85c3304595c598070730be1, type: 3}
 --- !u!195 &869464445
 NavMeshAgent:
@@ -1718,7 +1719,7 @@ Camera:
   m_Depth: -1
   m_CullingMask:
     serializedVersion: 2
-    m_Bits: 247
+    m_Bits: 503
   m_RenderingPath: -1
   m_TargetTexture: {fileID: 0}
   m_TargetDisplay: 0
