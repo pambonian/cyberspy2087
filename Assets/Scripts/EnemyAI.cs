@@ -98,7 +98,7 @@ public class EnemyAI : MonoBehaviour
 
             firePosition.LookAt(player);
 
-            Instantiate(attackProjectile, firePosition.position, firePosition.localRotation);
+            Instantiate(attackProjectile, firePosition.position, firePosition.rotation);
 
             readyToAttack = false;
             StartCoroutine(ResetAttack());
