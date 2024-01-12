@@ -9,7 +9,11 @@ public class EnemyAI : MonoBehaviour
 {
     NavMeshAgent myAgent;
     public LayerMask whatIsGround, whatIsPlayer;
+
     public Transform player;
+    Animator myAnimator;
+
+    public Transform firePosition;
 
     // Guarding
     public Vector3 destinationPoint;
@@ -25,11 +29,15 @@ public class EnemyAI : MonoBehaviour
     private bool playerInAttackRange, readyToAttack = true;
     public GameObject attackProjectile;
 
+    // Melee Attack
+    public bool meleeAttacker;
+
 
 
     // Start is called before the first frame update
     void Start()
     {
+        myAnimator = GetComponent<Animator>();
         player = FindObjectOfType<Player>().transform;
         myAgent = GetComponent<NavMeshAgent>();
     }
@@ -84,13 +92,30 @@ public class EnemyAI : MonoBehaviour
         myAgent.SetDestination(transform.position);
         transform.LookAt(player);
 
-        if(readyToAttack)
+        if(readyToAttack && !meleeAttacker)
         {
-            Instantiate(attackProjectile, transform.position, transform.localRotation);
+            myAnimator.SetTrigger("Attack");
+
+            firePosition.LookAt(player);
+
+            Instantiate(attackProjectile, firePosition.position, firePosition.rotation);
+
             readyToAttack = false;
             StartCoroutine(ResetAttack());
         }
+        else if (readyToAttack && meleeAttacker)
+        {
+            myAnimator.SetTrigger("Attack");
+        }
 
+    }
+
+    public void MeleeDamage()
+    {
+        if(playerInAttackRange)
+        {
+            // damage to player later on
+        }
     }
 
     private void SearchForDestination()
