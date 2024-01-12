@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class EnemyHealthSystem : MonoBehaviour
 {
+    public int currentHealth = 5;
     // Start is called before the first frame update
     void Start()
     {
@@ -14,5 +15,14 @@ public class EnemyHealthSystem : MonoBehaviour
     void Update()
     {
         
+    }
+
+    public void TakeDamage()
+    {
+        currentHealth--;
+        if(currentHealth <=0)
+        {
+            Destroy(gameObject);
+        }
     }
 }
