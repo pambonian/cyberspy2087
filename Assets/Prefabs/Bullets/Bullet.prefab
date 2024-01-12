@@ -112,7 +112,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 800
-  bulletLife: 8
+  bulletLife: 15
   myRigidBody: {fileID: 1580209032507779247}
 --- !u!54 &1580209032507779247
 Rigidbody:

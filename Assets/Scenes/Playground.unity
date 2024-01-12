@@ -784,9 +784,11 @@ GameObject:
   - component: {fileID: 300640055}
   - component: {fileID: 300640056}
   - component: {fileID: 300640057}
+  - component: {fileID: 300640059}
+  - component: {fileID: 300640058}
   m_Layer: 0
   m_Name: CACODEMON
-  m_TagString: Untagged
+  m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -841,6 +843,32 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   move: 1
   rotate: 0
+--- !u!114 &300640058
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 300640054}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 720ed67a46cec6d469efd1fbefe53f58, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  currentHealth: 5
+--- !u!135 &300640059
+SphereCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 300640054}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Radius: 2.89
+  m_Center: {x: -6.65, y: 0.25, z: 0}
 --- !u!1 &449512932
 GameObject:
   m_ObjectHideFlags: 0
@@ -1169,9 +1197,11 @@ GameObject:
   - component: {fileID: 583233892}
   - component: {fileID: 583233894}
   - component: {fileID: 583233893}
+  - component: {fileID: 583233896}
+  - component: {fileID: 583233895}
   m_Layer: 0
   m_Name: CACODEMON (1)
-  m_TagString: Untagged
+  m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1226,6 +1256,32 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!114 &583233895
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 583233891}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 720ed67a46cec6d469efd1fbefe53f58, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  currentHealth: 5
+--- !u!135 &583233896
+SphereCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 583233891}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Radius: 2.9
+  m_Center: {x: -4.46, y: 0.29, z: -1.76}
 --- !u!1 &659826102
 GameObject:
   m_ObjectHideFlags: 0
@@ -1844,25 +1900,6 @@ Transform:
   m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: fb6637cf93c5e7742a033cbd9220595e, type: 3}
   m_PrefabInstance: {fileID: 978299302}
   m_PrefabAsset: {fileID: 0}
---- !u!1 &978299304 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 919132149155446097, guid: fb6637cf93c5e7742a033cbd9220595e, type: 3}
-  m_PrefabInstance: {fileID: 978299302}
-  m_PrefabAsset: {fileID: 0}
---- !u!64 &978299305
-MeshCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 978299304}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 4
-  m_Convex: 0
-  m_CookingOptions: 30
-  m_Mesh: {fileID: -5495902117074765545, guid: fb6637cf93c5e7742a033cbd9220595e, type: 3}
 --- !u!23 &1023768065
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -15864,30 +15901,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: fb6637cf93c5e7742a033cbd9220595e, type: 3}
---- !u!1 &1202481419 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 919132149155446097, guid: fb6637cf93c5e7742a033cbd9220595e, type: 3}
-  m_PrefabInstance: {fileID: 1158789699}
-  m_PrefabAsset: {fileID: 0}
 --- !u!4 &1202481422 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: fb6637cf93c5e7742a033cbd9220595e, type: 3}
   m_PrefabInstance: {fileID: 1158789699}
   m_PrefabAsset: {fileID: 0}
---- !u!64 &1202481423
-MeshCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1202481419}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 4
-  m_Convex: 0
-  m_CookingOptions: 30
-  m_Mesh: {fileID: -5495902117074765545, guid: fb6637cf93c5e7742a033cbd9220595e, type: 3}
 --- !u!1 &1223233470
 GameObject:
   m_ObjectHideFlags: 0
@@ -15900,9 +15918,11 @@ GameObject:
   - component: {fileID: 1223233472}
   - component: {fileID: 1223233471}
   - component: {fileID: 1223233477}
+  - component: {fileID: 1223233478}
+  - component: {fileID: 1223233479}
   m_Layer: 0
   m_Name: Robot Enemy
-  m_TagString: Untagged
+  m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -15943,8 +15963,8 @@ NavMeshAgent:
   m_GameObject: {fileID: 1223233470}
   m_Enabled: 1
   m_AgentTypeID: 0
-  m_Radius: 0.5000001
-  m_Speed: 7
+  m_Radius: 3.42
+  m_Speed: 4
   m_Acceleration: 8
   avoidancePriority: 50
   m_AngularSpeed: 120
@@ -15952,8 +15972,8 @@ NavMeshAgent:
   m_AutoTraverseOffMeshLink: 1
   m_AutoBraking: 1
   m_AutoRepath: 1
-  m_Height: 2
-  m_BaseOffset: 1
+  m_Height: 6.25
+  m_BaseOffset: 0
   m_WalkableMask: 4294967295
   m_ObstacleAvoidanceType: 4
 --- !u!4 &1223233476
@@ -15993,6 +16013,32 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!135 &1223233478
+SphereCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1223233470}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Radius: 3.29
+  m_Center: {x: 0, y: 3.52, z: 0}
+--- !u!114 &1223233479
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1223233470}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 720ed67a46cec6d469efd1fbefe53f58, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  currentHealth: 5
 --- !u!1 &1289691043
 GameObject:
   m_ObjectHideFlags: 0
@@ -16116,6 +16162,7 @@ GameObject:
   - component: {fileID: 1411630460}
   - component: {fileID: 1411630459}
   - component: {fileID: 1411630458}
+  - component: {fileID: 1411630461}
   m_Layer: 0
   m_Name: Monster
   m_TagString: Enemy
@@ -16131,7 +16178,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1411630455}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: 0, y: 0, z: -30.2}
   m_LocalScale: {x: 8, y: 8, z: 8}
   m_ConstrainProportionsScale: 1
   m_Children:
@@ -16222,6 +16269,19 @@ MonoBehaviour:
   attackTime: 0
   attackProjectile: {fileID: 0}
   meleeAttacker: 1
+--- !u!114 &1411630461
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1411630455}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 720ed67a46cec6d469efd1fbefe53f58, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  currentHealth: 5
 --- !u!1 &1414658291
 GameObject:
   m_ObjectHideFlags: 0
@@ -16370,6 +16430,7 @@ MonoBehaviour:
   muzzleFlash: {fileID: 1743301284569550, guid: bf932de55bc9b244894a96a195ad52b0, type: 3}
   bulletHole: {fileID: 1000010355441670, guid: b63f824d363dc944ebaf1e221c6b00e5, type: 3}
   waterLeak: {fileID: 5933849919616007023, guid: 29a8a4ff326c8f24bb37eb23ea155ddd, type: 3}
+  bloodEffect: {fileID: 1000013169864706, guid: e5a3d6da48298a0458c1990f58c27069, type: 3}
   bullet: {fileID: 2301637783011706737, guid: 3a3b2b6dde611c148a7b2324fa087f6b, type: 3}
   canAutoFire: 0
   timeBetweenShots: 0.1
@@ -16380,6 +16441,7 @@ MonoBehaviour:
   reloading: 0
   aimPosition: {fileID: 1717168706}
   zoomAmount: 50
+  damageAmount: 2
 --- !u!1 &1623266402
 GameObject:
   m_ObjectHideFlags: 0
