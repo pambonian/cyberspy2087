@@ -11,7 +11,7 @@ public class GunSystem : MonoBehaviour
     private UICanvasController myUICanvas;
 
     public Transform firePosition;
-    public GameObject muzzleFlash, bulletHole, waterLeak;
+    public GameObject muzzleFlash, bulletHole, waterLeak, bloodEffect;
 
     public GameObject bullet;
 
@@ -117,6 +117,7 @@ public class GunSystem : MonoBehaviour
                 if (hit.collider.CompareTag("Enemy"))
                 {
                     hit.collider.GetComponent<EnemyHealthSystem>().TakeDamage(damageAmount);
+                    Instantiate(bloodEffect, hit.point, Quaternion.LookRotation(hit.normal));
                 }
             }
             else

@@ -16468,6 +16468,7 @@ MonoBehaviour:
   muzzleFlash: {fileID: 1743301284569550, guid: bf932de55bc9b244894a96a195ad52b0, type: 3}
   bulletHole: {fileID: 1000010355441670, guid: b63f824d363dc944ebaf1e221c6b00e5, type: 3}
   waterLeak: {fileID: 5933849919616007023, guid: 29a8a4ff326c8f24bb37eb23ea155ddd, type: 3}
+  bloodEffect: {fileID: 1000013169864706, guid: e5a3d6da48298a0458c1990f58c27069, type: 3}
   bullet: {fileID: 2301637783011706737, guid: 3a3b2b6dde611c148a7b2324fa087f6b, type: 3}
   canAutoFire: 0
   timeBetweenShots: 0.1
@@ -16478,6 +16479,7 @@ MonoBehaviour:
   reloading: 0
   aimPosition: {fileID: 1717168706}
   zoomAmount: 50
+  damageAmount: 2
 --- !u!1 &1623266402
 GameObject:
   m_ObjectHideFlags: 0
