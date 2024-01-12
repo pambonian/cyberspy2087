@@ -20,6 +20,7 @@ public class EnemyHealthSystem : MonoBehaviour
     public void TakeDamage()
     {
         currentHealth--;
+
         if(currentHealth <=0)
         {
             Destroy(gameObject);
