@@ -1554,6 +1554,7 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 128
   player: {fileID: 1114336265}
+  firePosition: {fileID: 0}
   destinationPoint: {x: 0, y: 0, z: 0}
   destinationRange: 100
   chaseRange: 26.3
@@ -15925,6 +15926,7 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 128
   player: {fileID: 1114336265}
+  firePosition: {fileID: 1959936982}
   destinationPoint: {x: 0, y: 0, z: 0}
   destinationRange: 100
   chaseRange: 26.3
@@ -16212,6 +16214,7 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 128
   player: {fileID: 1114336265}
+  firePosition: {fileID: 0}
   destinationPoint: {x: 0, y: 0, z: 0}
   destinationRange: 100
   chaseRange: 24
