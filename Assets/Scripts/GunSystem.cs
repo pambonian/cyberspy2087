@@ -116,7 +116,7 @@ public class GunSystem : MonoBehaviour
                 }
                 if (hit.collider.CompareTag("Enemy"))
                 {
-                    hit.collider.GetComponent<EnemyHealthSystem>().TakeDamage();
+                    hit.collider.GetComponent<EnemyHealthSystem>().TakeDamage(damageAmount);
                 }
             }
             else
