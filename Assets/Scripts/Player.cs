@@ -18,7 +18,7 @@ public class Player : MonoBehaviour
 
     public float mouseSensitivity = 100f;
     private float cameraVerticalRotation;
-    //
+    // 
     
     // jumping values
     public float jumpHeight = 10f;

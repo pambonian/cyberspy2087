@@ -31,6 +31,7 @@ public class EnemyAI : MonoBehaviour
 
     // Melee Attack
     public bool meleeAttacker;
+    public int meleeDamageAmount = 2;
 
 
 
@@ -114,7 +115,7 @@ public class EnemyAI : MonoBehaviour
     {
         if(playerInAttackRange)
         {
-            // damage to player later on
+            player.GetComponent<PlayerHealthSystem>().TakeDamage(meleeDamageAmount);
         }
     }
 
