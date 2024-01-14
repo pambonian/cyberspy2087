@@ -6,7 +6,7 @@ public class PlayerHealthSystem : MonoBehaviour
 {
 
     public int maxHealth;
-    public int currentHealth;
+    private int currentHealth;
 
     UICanvasController healthBar;
     // Start is called before the first frame update
