@@ -35,6 +35,7 @@ public class EnemyProjectileController : MonoBehaviour
         if (other.gameObject.CompareTag("Player"))
         {
             other.gameObject.GetComponent<PlayerHealthSystem>().TakeDamage(damageAmount);
+            Destroy(gameObject);
         }
     }
 }
