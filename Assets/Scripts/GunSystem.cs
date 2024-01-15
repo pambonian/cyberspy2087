@@ -172,7 +172,7 @@ public class GunSystem : MonoBehaviour
     private void UpdateAmmoText()
     {
         myUICanvas.ammoText.SetText(bulletsAvailable + "/ " + magazineSize);
-        myUICanvas.totalAmmoText.SetText(totalBullets.ToString());
+        myUICanvas.totalAmmoText.SetText("Rounds: " + totalBullets.ToString());
     }
 
 }
