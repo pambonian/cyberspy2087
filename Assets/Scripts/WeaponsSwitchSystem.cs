@@ -60,7 +60,7 @@ public class WeaponsSwitchSystem : MonoBehaviour
                 {
                     allGuns.Add(unlockableGuns[i]);
                     unlockableGuns.RemoveAt(i);
-
+                    // test
                     i = unlockableGuns.Count;
                     unlocked = true;
                 }

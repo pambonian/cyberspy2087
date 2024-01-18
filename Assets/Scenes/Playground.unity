@@ -18421,7 +18421,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: dfe88d6ac89d5c6468de65f772c8e57b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  gunToPickupName: 
+  gunToPickupName: Rocket Launcher
 --- !u!1 &1820370867
 GameObject:
   m_ObjectHideFlags: 0
