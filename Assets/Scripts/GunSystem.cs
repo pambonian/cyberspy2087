@@ -11,7 +11,7 @@ public class GunSystem : MonoBehaviour
     private UICanvasController myUICanvas;
 
     public Transform firePosition;
-    public GameObject muzzleFlash, bulletHole, waterLeak, bloodEffect;
+    public GameObject muzzleFlash, bulletHole, waterLeak, bloodEffect, rocketTrail;
 
     public GameObject bullet;
 
@@ -34,6 +34,8 @@ public class GunSystem : MonoBehaviour
 
     public int damageAmount;
     public string gunName;
+
+    public bool rocketLauncher;
 
 
     // Start is called before the first frame update
@@ -106,16 +108,21 @@ public class GunSystem : MonoBehaviour
                 if (Vector3.Distance(myCameraHead.position, hit.point) > 2f)
                 {
                     firePosition.LookAt(hit.point);
-                    if (hit.collider.CompareTag("Shootable"))
+
+                    if (!rocketLauncher)
                     {
-                        Instantiate(bulletHole, hit.point, Quaternion.LookRotation(hit.normal));
-                    }
-                    if (hit.collider.CompareTag("WaterLeaker"))
-                    {
-                        Instantiate(waterLeak, hit.point, Quaternion.LookRotation(hit.normal));
+                        if (hit.collider.CompareTag("Shootable"))
+                        {
+                            Instantiate(bulletHole, hit.point, Quaternion.LookRotation(hit.normal));
+                        }
+                        if (hit.collider.CompareTag("WaterLeaker"))
+                        {
+                            Instantiate(waterLeak, hit.point, Quaternion.LookRotation(hit.normal));
+                        }
                     }
                 }
-                if (hit.collider.CompareTag("Enemy"))
+
+                if (hit.collider.CompareTag("Enemy") && !rocketLauncher)
                 {
                     hit.collider.GetComponent<EnemyHealthSystem>().TakeDamage(damageAmount);
                     Instantiate(bloodEffect, hit.point, Quaternion.LookRotation(hit.normal));
@@ -128,9 +135,17 @@ public class GunSystem : MonoBehaviour
 
             bulletsAvailable--;
 
-
-            Instantiate(muzzleFlash, firePosition.position, firePosition.rotation, firePosition);
-            Instantiate(bullet, firePosition.position, firePosition.rotation, firePosition);
+            if (!rocketLauncher)
+            {
+                Instantiate(muzzleFlash, firePosition.position, firePosition.rotation, firePosition);
+                Instantiate(bullet, firePosition.position, firePosition.rotation, firePosition);
+            }
+            else
+            {
+                Instantiate(bullet, firePosition.position, firePosition.rotation);
+                Instantiate(rocketTrail, firePosition.position, firePosition.rotation);
+            }
+            
 
             StartCoroutine(ResetShot());
 
