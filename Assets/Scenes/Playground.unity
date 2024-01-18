@@ -322,7 +322,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &162684862
 Transform:
   m_ObjectHideFlags: 0
@@ -18358,6 +18358,8 @@ GameObject:
   m_Component:
   - component: {fileID: 1791705270}
   - component: {fileID: 1791705269}
+  - component: {fileID: 1791705272}
+  - component: {fileID: 1791705271}
   m_Layer: 0
   m_Name: Weapons Pickup
   m_TagString: Untagged
@@ -18373,7 +18375,7 @@ SphereCollider:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1791705268}
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
   m_Radius: 1.52
@@ -18394,6 +18396,32 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 10
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1791705271
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1791705268}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: dd364e7f2755f3347a731f33cf07b560, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  rotationSpeed: 50
+--- !u!114 &1791705272
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1791705268}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: dfe88d6ac89d5c6468de65f772c8e57b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  gunToPickupName: 
 --- !u!1 &1820370867
 GameObject:
   m_ObjectHideFlags: 0
@@ -24321,6 +24349,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: dfe88d6ac89d5c6468de65f772c8e57b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  gunToPickupName: 
 --- !u!4 &9155268034787384150
 Transform:
   m_ObjectHideFlags: 0
