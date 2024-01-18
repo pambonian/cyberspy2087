@@ -10,6 +10,8 @@ public class GunSystem : MonoBehaviour
     public Transform myCameraHead;
     private UICanvasController myUICanvas;
 
+    public Animator myAnimator;
+
     public Transform firePosition;
     public GameObject muzzleFlash, bulletHole, waterLeak, bloodEffect, rocketTrail;
 
@@ -155,9 +157,19 @@ public class GunSystem : MonoBehaviour
 
     private void Reload()
     {
+        myAnimator.SetTrigger("Pistol Reload");
+        
+        reloading = true;
+
+        StartCoroutine(ReloadCoroutine());
+    }
+
+    IEnumerator ReloadCoroutine()
+    {
+        yield return new WaitForSeconds(reloadTime);
         int bulletsToAdd = magazineSize - bulletsAvailable;
 
-        if(totalBullets > bulletsToAdd)
+        if (totalBullets > bulletsToAdd)
         {
             totalBullets -= bulletsToAdd;
             bulletsAvailable = magazineSize;
@@ -167,14 +179,6 @@ public class GunSystem : MonoBehaviour
             bulletsAvailable += totalBullets;
             totalBullets = 0;
         }
-        reloading = true;
-
-        StartCoroutine(ReloadCoroutine());
-    }
-
-    IEnumerator ReloadCoroutine()
-    {
-        yield return new WaitForSeconds(reloadTime);
         reloading = false;
     }
 
