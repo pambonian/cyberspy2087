@@ -2139,15 +2139,15 @@ MonoBehaviour:
   bloodEffect: {fileID: 1000013169864706, guid: e5a3d6da48298a0458c1990f58c27069, type: 3}
   bullet: {fileID: 7403195636195904221, guid: 61145cfdd6535164984c598d2d4978e6, type: 3}
   canAutoFire: 0
-  timeBetweenShots: 0.1
+  timeBetweenShots: 1
   bulletsAvailable: 0
-  totalBullets: 50
-  magazineSize: 10
+  totalBullets: 15
+  magazineSize: 5
   reloadTime: 2
   reloading: 0
   aimPosition: {fileID: 1717168706}
-  zoomAmount: 50
-  damageAmount: 2
+  zoomAmount: 25
+  damageAmount: 6
 --- !u!1 &869464443
 GameObject:
   m_ObjectHideFlags: 0
@@ -17343,6 +17343,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1623266403}
+  - component: {fileID: 1623266404}
   m_Layer: 7
   m_Name: Guns
   m_TagString: Untagged
@@ -17370,6 +17371,23 @@ Transform:
   m_Father: {fileID: 1145313882}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1623266404
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1623266402}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 732103f1bc354e34c959bc772486a18b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  allGuns:
+  - {fileID: 1423941257}
+  - {fileID: 1364652786}
+  - {fileID: 795718907}
+  currentGunNumber: 0
 --- !u!1 &1644603223
 GameObject:
   m_ObjectHideFlags: 0
@@ -18958,7 +18976,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4944290644515847}
   m_Layer: 0
-  m_Name: Sniper_04
+  m_Name: Sniper Prefab
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
