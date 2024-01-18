@@ -33,6 +33,7 @@ public class GunSystem : MonoBehaviour
     public float zoomAmount;
 
     public int damageAmount;
+    public string gunName;
 
 
     // Start is called before the first frame update
