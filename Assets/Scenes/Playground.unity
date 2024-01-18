@@ -17493,10 +17493,10 @@ MonoBehaviour:
   allGuns:
   - {fileID: 1423941257}
   - {fileID: 1364652786}
-  - {fileID: 162684863}
+  - {fileID: 795718907}
   currentGunNumber: 0
   unlockableGuns:
-  - {fileID: 795718907}
+  - {fileID: 162684863}
 --- !u!1 &1644603223
 GameObject:
   m_ObjectHideFlags: 0
