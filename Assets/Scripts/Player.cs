@@ -151,7 +151,7 @@ public class Player : MonoBehaviour
         }
 
         myAnimator.SetFloat("PlayerSpeed", movement.magnitude);
-        Debug.Log(movement.magnitude);
+        // Debug.Log(movement.magnitude);
 
         myController.Move(movement);
 

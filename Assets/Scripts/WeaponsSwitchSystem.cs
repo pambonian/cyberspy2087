@@ -8,6 +8,8 @@ public class WeaponsSwitchSystem : MonoBehaviour
     public List<GunSystem> allGuns = new List<GunSystem>();
     public int currentGunNumber;
 
+    public List<GunSystem> unlockableGuns = new List<GunSystem>();
+
     // Start is called before the first frame update
     void Start()
     {
@@ -42,5 +44,10 @@ public class WeaponsSwitchSystem : MonoBehaviour
         activeGun = allGuns[currentGunNumber];
         activeGun.gameObject.SetActive(true);
 
+    }
+
+    public void AddGun(string gunName)
+    {
+        Debug.Log("We picked up: " + gunName);
     }
 }
