@@ -49,7 +49,10 @@ public class WeaponsSwitchSystem : MonoBehaviour
 
     public void AddGun(string gunName)
     {
-        if(unlockableGuns.Count > 0)
+
+        bool unlocked = false;
+
+        if (unlockableGuns.Count > 0)
         {
             for (int i=0; i < unlockableGuns.Count; i++)
             {
@@ -59,8 +62,15 @@ public class WeaponsSwitchSystem : MonoBehaviour
                     unlockableGuns.RemoveAt(i);
 
                     i = unlockableGuns.Count;
+                    unlocked = true;
                 }
             }
+        }
+
+        if (unlocked)
+        {
+            currentGunNumber = allGuns.Count - 2;
+            SwitchGun();
         }
     }
 }
