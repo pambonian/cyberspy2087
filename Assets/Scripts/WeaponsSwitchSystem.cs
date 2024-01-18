@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
 
 public class WeaponsSwitchSystem : MonoBehaviour
@@ -48,6 +49,18 @@ public class WeaponsSwitchSystem : MonoBehaviour
 
     public void AddGun(string gunName)
     {
-        Debug.Log("We picked up: " + gunName);
+        if(unlockableGuns.Count > 0)
+        {
+            for (int i=0; i < unlockableGuns.Count; i++)
+            {
+                if (unlockableGuns[i].gunName == gunName)
+                {
+                    allGuns.Add(unlockableGuns[i]);
+                    unlockableGuns.RemoveAt(i);
+
+                    i = unlockableGuns.Count;
+                }
+            }
+        }
     }
 }
