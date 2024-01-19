@@ -69,9 +69,11 @@ public class GunSystem : MonoBehaviour
             case "Pistol":
                 gunAnimationName = "Pistol Reload";
                 break;
+
             case "Rifle":
                 gunAnimationName = "Rifle Reload";
                 break;
+
             default:
                 break;
         }
