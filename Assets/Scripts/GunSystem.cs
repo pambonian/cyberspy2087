@@ -39,6 +39,8 @@ public class GunSystem : MonoBehaviour
 
     public bool rocketLauncher;
 
+    string gunAnimationName;
+
 
     // Start is called before the first frame update
     void Start()
@@ -57,6 +59,22 @@ public class GunSystem : MonoBehaviour
         Shoot();
         GunManager();
         UpdateAmmoText();
+        AnimationManager();
+    }
+
+    private void AnimationManager()
+    {
+        switch(gunName)
+        {
+            case "Pistol":
+                gunAnimationName = "Pistol Reload";
+                break;
+            case "Rifle":
+                gunAnimationName = "Rifle Reload";
+                break;
+            default:
+                break;
+        }
     }
 
     
@@ -157,7 +175,7 @@ public class GunSystem : MonoBehaviour
 
     private void Reload()
     {
-        myAnimator.SetTrigger("Pistol Reload");
+        myAnimator.SetTrigger(gunAnimationName);
         
         reloading = true;
 
