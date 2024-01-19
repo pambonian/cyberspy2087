@@ -74,6 +74,14 @@ public class GunSystem : MonoBehaviour
                 gunAnimationName = "Rifle Reload";
                 break;
 
+            case "Sniper":
+                gunAnimationName = "Sniper Reload";
+                break;
+
+            case "Rocket Launcher":
+                gunAnimationName = "Rocket Launcher Reload";
+                break;
+
             default:
                 break;
         }
