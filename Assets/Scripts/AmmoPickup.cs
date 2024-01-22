@@ -8,7 +8,6 @@ public class AmmoPickup : MonoBehaviour
     {
         if (other.CompareTag("Player"))
         {
-            //
             other.GetComponentInChildren<GunSystem>().AddAmmo();
             Destroy(gameObject);
         }
