@@ -41,6 +41,8 @@ public class GunSystem : MonoBehaviour
 
     string gunAnimationName;
 
+    public int pickupBulletAmount;
+
 
     // Start is called before the first frame update
     void Start()
@@ -181,6 +183,11 @@ public class GunSystem : MonoBehaviour
 
 
         }
+    }
+
+    public void AddAmmo()
+    {
+        totalBullets += pickupBulletAmount;
     }
 
     private void Reload()
