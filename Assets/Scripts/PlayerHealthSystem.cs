@@ -36,4 +36,19 @@ public class PlayerHealthSystem : MonoBehaviour
             FindObjectOfType<GameManager>().PlayerRespawn();
         }
     }
+
+    public void HealPlayer(int healAmount)
+    {
+        // If player collides with first aid kit
+        currentHealth += healAmount;
+
+        
+        if (currentHealth > maxHealth)
+        {
+            currentHealth = maxHealth; 
+            
+        }
+
+        healthBar.SetHealth(currentHealth);
+    }
 }
