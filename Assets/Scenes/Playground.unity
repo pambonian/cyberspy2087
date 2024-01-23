@@ -16487,7 +16487,7 @@ MonoBehaviour:
   myCameraHead: {fileID: 1145313882}
   myAnimator: {fileID: 1114336266}
   mouseSensitivity: 500
-  jumpHeight: 4
+  jumpHeight: 4.5
   ground: {fileID: 1783915152}
   groundLayer:
     serializedVersion: 2
