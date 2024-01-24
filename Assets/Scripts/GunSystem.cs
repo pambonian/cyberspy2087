@@ -135,7 +135,7 @@ public class GunSystem : MonoBehaviour
 
             RaycastHit hit;
 
-            if (Physics.Raycast(myCameraHead.position, myCameraHead.forward, out hit, 100f))
+            if (Physics.Raycast(myCameraHead.position, myCameraHead.forward, out hit, 200f))
             {
                 if (Vector3.Distance(myCameraHead.position, hit.point) > 2f)
                 {
