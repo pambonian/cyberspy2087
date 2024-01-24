@@ -33,6 +33,9 @@ public class PlayerHealthSystem : MonoBehaviour
         if (currentHealth <= 0)
         {
             gameObject.SetActive(false);
+
+            AudioManager.instance.StopBackgroundMusic();
+
             FindObjectOfType<GameManager>().PlayerRespawn();
         }
     }

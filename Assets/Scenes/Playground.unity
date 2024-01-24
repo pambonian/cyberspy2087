@@ -16487,7 +16487,7 @@ MonoBehaviour:
   myCameraHead: {fileID: 1145313882}
   myAnimator: {fileID: 1114336266}
   mouseSensitivity: 500
-  jumpHeight: 4
+  jumpHeight: 4.5
   ground: {fileID: 1783915152}
   groundLayer:
     serializedVersion: 2
@@ -16564,7 +16564,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 89270f8fc3ec8cc4981ae05c9eb42ad8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  maxHealth: 20
+  maxHealth: 10
 --- !u!1 &1145313881
 GameObject:
   m_ObjectHideFlags: 0
@@ -17529,7 +17529,7 @@ AudioSource:
   OutputAudioMixerGroup: {fileID: -2092736166306214182, guid: e83a21c7065944b4d8718252a10b3a79, type: 2}
   m_audioClip: {fileID: 8300000, guid: 4cf1819762b5578448b93e67d7b4f89e, type: 3}
   m_PlayOnAwake: 1
-  m_Volume: 0.3
+  m_Volume: 0.2
   m_Pitch: 1
   Loop: 1
   Mute: 0
@@ -18649,6 +18649,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1750075178}
+  - component: {fileID: 1750075179}
   m_Layer: 0
   m_Name: Audio Manager
   m_TagString: Untagged
@@ -18672,6 +18673,19 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 13
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1750075179
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1750075177}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 27b9bdb90b44ddc40b91402ba178e79d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  backgroundMusic: {fileID: 1491543759}
 --- !u!1 &1783915151
 GameObject:
   m_ObjectHideFlags: 0

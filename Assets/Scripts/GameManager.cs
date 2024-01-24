@@ -6,7 +6,7 @@ using UnityEngine.SceneManagement;
 public class GameManager : MonoBehaviour
 {
 
-    private float timeUntilPlayerDies = 2f;
+    private float timeUntilPlayerDies = 3f;
     public void PlayerRespawn()
     {
         StartCoroutine(PlayerRespawnCo());

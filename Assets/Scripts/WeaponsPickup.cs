@@ -12,6 +12,8 @@ public class WeaponsPickup : MonoBehaviour
         {
             other.gameObject.GetComponentInChildren<WeaponsSwitchSystem>().AddGun(gunToPickupName);
             Destroy(gameObject);
+
+            // test
         }
     }
 }
