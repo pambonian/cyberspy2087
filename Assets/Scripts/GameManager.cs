@@ -7,6 +7,8 @@ public class GameManager : MonoBehaviour
 {
 
     private float timeUntilPlayerDies = 3f;
+
+    public AudioSource[] SFXs;
     public void PlayerRespawn()
     {
         StartCoroutine(PlayerRespawnCo());
