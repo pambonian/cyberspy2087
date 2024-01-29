@@ -8,6 +8,8 @@ public class AudioManager : MonoBehaviour
 
     public AudioSource backgroundMusic;
 
+    public AudioSource[] SFXs;
+
     private void Awake()
     {
         instance = this;
