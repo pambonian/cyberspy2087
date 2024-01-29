@@ -37,6 +37,8 @@ public class WeaponsSwitchSystem : MonoBehaviour
         activeGun.gameObject.SetActive(false);
         currentGunNumber++;
 
+        AudioManager.instance.PlayerSFX(6);
+
         if (currentGunNumber >= allGuns.Count)
         {
             currentGunNumber = 0;

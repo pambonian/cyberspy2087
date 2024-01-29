@@ -188,11 +188,14 @@ public class GunSystem : MonoBehaviour
     public void AddAmmo()
     {
         totalBullets += pickupBulletAmount;
+        AudioManager.instance.PlayerSFX(0);
     }
 
     private void Reload()
     {
         myAnimator.SetTrigger(gunAnimationName);
+
+        AudioManager.instance.PlayerSFX(7);
         
         reloading = true;
 
