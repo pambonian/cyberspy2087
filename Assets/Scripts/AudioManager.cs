@@ -15,9 +15,10 @@ public class AudioManager : MonoBehaviour
         instance = this;
     }
 
-    private void Update()
+    public void PlayerSFX(int sfxNumber)
     {
-        // None
+        SFXs[sfxNumber].Stop();
+        SFXs[sfxNumber].Play();
     }
 
     public void StopBackgroundMusic()
