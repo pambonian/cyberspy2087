@@ -7891,7 +7891,7 @@ MonoBehaviour:
   reloading: 0
   aimPosition: {fileID: 1717168706}
   zoomAmount: 25
-  damageAmount: 10
+  damageAmount: 18
   gunName: Rocket Launcher
   rocketLauncher: 1
   pickupBulletAmount: 2
@@ -38153,7 +38153,7 @@ MonoBehaviour:
   reloading: 0
   aimPosition: {fileID: 1717168706}
   zoomAmount: 25
-  damageAmount: 6
+  damageAmount: 12
   gunName: Sniper
   rocketLauncher: 0
   pickupBulletAmount: 5
