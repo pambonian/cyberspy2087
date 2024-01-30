@@ -5,10 +5,80 @@ ModelImporter:
   internalIDToNameTable: []
   externalObjects:
   - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: DeLorean_BlueLight
+    second: {fileID: 2100000, guid: 1102d858b1d256c49a5dfab9dcc82597, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: DeLorean_BrightCables
+    second: {fileID: 2100000, guid: 2d56a0dfe7bae324f926360fc73425a4, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: DeLorean_DarkCables
+    second: {fileID: 2100000, guid: e8a697583e4038847835ab2ca9d0859a, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: DeLorean_EnginePart1
+    second: {fileID: 2100000, guid: 884b5bc7fea74744182c4bb0c85cebb0, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: DeLorean_EnginePart2
+    second: {fileID: 2100000, guid: b1933a20bc6547a4ea69676da2a0bc6c, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: DeLorean_EnginePart3
+    second: {fileID: 2100000, guid: b10f3b1a140fe104db04c8105ee74133, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: DeLorean_FinituraNero
+    second: {fileID: 2100000, guid: e3c3bd75cc49831458616569bdc152ef, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: DeLorean_Interni
+    second: {fileID: 2100000, guid: 50713773b3dbdb24da9a6a916fb60364, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: DeLorean_MainBody
+    second: {fileID: 2100000, guid: 16241b00a35b35a4db93520c2ce26426, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: DeLorean_Motore
+    second: {fileID: 2100000, guid: 981cd04b7f489f9488e6694dd81e96f5, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: DeLorean_OrangeLight
+    second: {fileID: 2100000, guid: 9f0d7d1c8f2fc1544951d9e577711265, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: DeLorean_RedLight
+    second: {fileID: 2100000, guid: ee0245b8aea137a42814ebe7ba8c4199, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: DeLorean_WhiteLight
+    second: {fileID: 2100000, guid: c2ca70a126841b845b60e248722b6a1c, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Standard_8
+    second: {fileID: 2100000, guid: f5c5fe02fa0da604cac7f5baa349f2a5, type: 2}
+  - first:
       type: UnityEngine:Texture2D
       assembly: UnityEngine.CoreModule
       name: DeLorean
-    second: {fileID: 2800000, guid: ca4406af08b2b3241ab4cb9188d2eee9, type: 3}
+    second: {fileID: 2800000, guid: ecde1f185e93517478735ec6d939e790, type: 3}
   materials:
     materialImportMode: 2
     materialName: 0
