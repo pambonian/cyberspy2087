@@ -139,6 +139,7 @@ public class Player : MonoBehaviour
         if(Input.GetKey(KeyCode.LeftShift) && !isCrouching)
         {
             movement = movement * runSpeed * Time.deltaTime;
+            
             isRunning = true;
         }
         else if (isCrouching)
@@ -148,6 +149,7 @@ public class Player : MonoBehaviour
         else
         {
             movement = movement * speed * Time.deltaTime;
+            
             isRunning = false;
         }
 
