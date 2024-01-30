@@ -139,6 +139,9 @@ public class GunSystem : MonoBehaviour
         {
             readyToShoot = false;
 
+            // Apply recoil here
+            GetComponent<WeaponRecoil>().ApplyRecoil();
+
             RaycastHit hit;
 
             if (Physics.Raycast(myCameraHead.position, myCameraHead.forward, out hit, 1000f))

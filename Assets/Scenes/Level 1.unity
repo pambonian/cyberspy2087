@@ -806,6 +806,7 @@ GameObject:
   m_Component:
   - component: {fileID: 162684862}
   - component: {fileID: 162684863}
+  - component: {fileID: 162684864}
   m_Layer: 7
   m_Name: Rocket Launcher
   m_TagString: Untagged
@@ -864,6 +865,21 @@ MonoBehaviour:
   gunName: Rocket Launcher
   rocketLauncher: 1
   pickupBulletAmount: 2
+--- !u!114 &162684864
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 162684861}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fd21217f8576ba64c95057f359250038, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  recoilKickback: {x: 0, y: 0, z: 0}
+  recoilRotation: {x: -5, y: 0, z: 0}
+  returnSpeed: 5
 --- !u!1 &203339056
 GameObject:
   m_ObjectHideFlags: 0
@@ -3304,6 +3320,7 @@ GameObject:
   m_Component:
   - component: {fileID: 795718906}
   - component: {fileID: 795718907}
+  - component: {fileID: 795718908}
   m_Layer: 7
   m_Name: Sniper
   m_TagString: Untagged
@@ -3362,6 +3379,21 @@ MonoBehaviour:
   gunName: Sniper
   rocketLauncher: 0
   pickupBulletAmount: 5
+--- !u!114 &795718908
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 795718905}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fd21217f8576ba64c95057f359250038, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  recoilKickback: {x: 0, y: 0, z: 0}
+  recoilRotation: {x: -5, y: 0, z: 0}
+  returnSpeed: 5
 --- !u!1 &818917472
 GameObject:
   m_ObjectHideFlags: 0
@@ -19215,6 +19247,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1364652785}
   - component: {fileID: 1364652786}
+  - component: {fileID: 1364652787}
   m_Layer: 7
   m_Name: Rifle
   m_TagString: Untagged
@@ -19273,6 +19306,21 @@ MonoBehaviour:
   gunName: Rifle
   rocketLauncher: 0
   pickupBulletAmount: 100
+--- !u!114 &1364652787
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1364652784}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fd21217f8576ba64c95057f359250038, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  recoilKickback: {x: 0, y: 0, z: 0}
+  recoilRotation: {x: -5, y: 0, z: 0}
+  returnSpeed: 5
 --- !u!1 &1411630455
 GameObject:
   m_ObjectHideFlags: 0
@@ -19418,6 +19466,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1423941256}
   - component: {fileID: 1423941257}
+  - component: {fileID: 1423941258}
   m_Layer: 7
   m_Name: Pistol
   m_TagString: Untagged
@@ -19476,6 +19525,21 @@ MonoBehaviour:
   gunName: Pistol
   rocketLauncher: 0
   pickupBulletAmount: 20
+--- !u!114 &1423941258
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1423941255}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fd21217f8576ba64c95057f359250038, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  recoilKickback: {x: 0, y: 0, z: 0}
+  recoilRotation: {x: -5, y: 0, z: 0}
+  returnSpeed: 5
 --- !u!1 &1470714172
 GameObject:
   m_ObjectHideFlags: 0
