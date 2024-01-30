@@ -1966,7 +1966,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 720ed67a46cec6d469efd1fbefe53f58, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  maxHealth: 4
+  maxHealth: 15
 --- !u!135 &300640059
 SphereCollider:
   m_ObjectHideFlags: 0
@@ -18856,7 +18856,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 720ed67a46cec6d469efd1fbefe53f58, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  maxHealth: 6
+  maxHealth: 25
 --- !u!1 &1251103250
 GameObject:
   m_ObjectHideFlags: 0
@@ -19531,7 +19531,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 720ed67a46cec6d469efd1fbefe53f58, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  maxHealth: 12
+  maxHealth: 50
 --- !u!1 &1423941255
 GameObject:
   m_ObjectHideFlags: 0
@@ -21586,7 +21586,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 720ed67a46cec6d469efd1fbefe53f58, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  maxHealth: 4
+  maxHealth: 15
 --- !u!135 &1836617870
 SphereCollider:
   m_ObjectHideFlags: 0
