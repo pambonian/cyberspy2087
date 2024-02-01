@@ -242,4 +242,23 @@ public class GunSystem : MonoBehaviour
         myUICanvas.totalAmmoText.SetText("Rounds: " + totalBullets.ToString());
     }
 
+    public void InitializeGun()
+    {
+        // Reset the gun's state, ensure it's ready to be used, etc.
+        // For example:
+        readyToShoot = true;
+        reloading = false;
+
+        // You might want to stop any audio that's playing, just in case.
+        // If you have an AudioSource component on the gun:
+        var audioSource = GetComponent<AudioSource>();
+        if (audioSource != null)
+        {
+            audioSource.Stop();
+            // You can also reset other audio parameters or states here if needed.
+        }
+
+        // Add any other initialization or resetting code needed for your gun here.
+    }
+
 }
