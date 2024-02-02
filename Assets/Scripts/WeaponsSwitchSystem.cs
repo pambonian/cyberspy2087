@@ -34,6 +34,13 @@ public class WeaponsSwitchSystem : MonoBehaviour
 
     private void SwitchGun()
     {
+        // Cancel reload on the current active gun before switching
+        if (activeGun != null)
+        {
+            activeGun.CancelReload();
+            activeGun.CancelShotReset();
+        }
+
         activeGun.gameObject.SetActive(false);
         currentGunNumber++;
 
@@ -46,7 +53,6 @@ public class WeaponsSwitchSystem : MonoBehaviour
 
         activeGun = allGuns[currentGunNumber];
         activeGun.gameObject.SetActive(true);
-
     }
 
     public void AddGun(string gunName)

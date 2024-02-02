@@ -43,6 +43,11 @@ public class GunSystem : MonoBehaviour
 
     public int pickupBulletAmount;
 
+    public int pistolShotSFXIndex;
+    public int rifleShotSFXIndex;
+    public int sniperShotSFXIndex;
+    public int rocketLauncherShotSFXIndex;
+
 
     // Start is called before the first frame update
     void Start()
@@ -125,7 +130,7 @@ public class GunSystem : MonoBehaviour
     private void Shoot()
     {
         // check the fire rate of the weapon:
-        if(canAutoFire)
+        if (canAutoFire)
         {
             shooting = Input.GetMouseButton(0);
         }
@@ -133,11 +138,14 @@ public class GunSystem : MonoBehaviour
         else
         {
             shooting = Input.GetMouseButtonDown(0);
+
         }
+        Debug.Log($"Shooting: {shooting}, ReadyToShoot: {readyToShoot}, BulletsAvailable: {bulletsAvailable}, Reloading: {reloading}");
         // if player is actively shooting the weapon:
         if (shooting && readyToShoot && bulletsAvailable > 0 && !reloading)
         {
             readyToShoot = false;
+            
 
             // Apply recoil here
             GetComponent<WeaponRecoil>().ApplyRecoil();
@@ -154,11 +162,13 @@ public class GunSystem : MonoBehaviour
                     {
                         if (hit.collider.CompareTag("Shootable"))
                         {
-                            Instantiate(bulletHole, hit.point, Quaternion.LookRotation(hit.normal));
+                            GameObject hole = Instantiate(bulletHole, hit.point, Quaternion.LookRotation(hit.normal));
+                            AdjustDecalTransform(hole, hit);
                         }
                         if (hit.collider.CompareTag("WaterLeaker"))
                         {
-                            Instantiate(waterLeak, hit.point, Quaternion.LookRotation(hit.normal));
+                            GameObject leak = Instantiate(waterLeak, hit.point, Quaternion.LookRotation(hit.normal));
+                            AdjustDecalTransform(leak, hit);
                         }
                     }
                 }
@@ -166,7 +176,8 @@ public class GunSystem : MonoBehaviour
                 if (hit.collider.CompareTag("Enemy") && !rocketLauncher)
                 {
                     hit.collider.GetComponent<EnemyHealthSystem>().TakeDamage(damageAmount);
-                    Instantiate(bloodEffect, hit.point, Quaternion.LookRotation(hit.normal));
+                    GameObject blood = Instantiate(bloodEffect, hit.point, Quaternion.LookRotation(hit.normal));
+                    AdjustDecalTransform(blood, hit);
                 }
             }
             else
@@ -180,19 +191,73 @@ public class GunSystem : MonoBehaviour
             {
                 Instantiate(muzzleFlash, firePosition.position, firePosition.rotation, firePosition);
                 Instantiate(bullet, firePosition.position, firePosition.rotation, firePosition);
+                PlayGunshotSound();
+                StartCoroutine(ResetShot());
             }
             else
             {
                 Instantiate(bullet, firePosition.position, firePosition.rotation);
                 Instantiate(rocketTrail, firePosition.position, firePosition.rotation);
+                PlayGunshotSound();
+                StartCoroutine(ResetShot());
             }
             
 
-            StartCoroutine(ResetShot());
+            // StartCoroutine(ResetShot());
+            
 
 
         }
+        else
+        {
+            // Optionally, add a log here to know when the condition is not met
+            Debug.Log("Condition for shooting not met");
+        }
+
     }
+
+    private void AdjustDecalTransform(GameObject decal, RaycastHit hit)
+    {
+        // Move the decal slightly off the surface to prevent z-fighting
+        decal.transform.position += decal.transform.forward * 0.01f;
+
+        // If the hit object should parent the decal (e.g., it's an enemy), parent the decal to it
+        if (hit.collider.CompareTag("Enemy"))
+        {
+            decal.transform.SetParent(hit.collider.transform);
+        }
+        else
+        {
+            // Otherwise, just position the decal at the hit point with the correct orientation
+            decal.transform.position = hit.point;
+            decal.transform.rotation = Quaternion.LookRotation(hit.normal);
+        }
+    }
+
+
+    private void PlayGunshotSound()
+    {
+        switch (gunName)
+        {
+            case "Pistol":
+                AudioManager.instance.PlayerSFX(8);
+                break;
+            case "Rifle":
+                AudioManager.instance.PlayerSFX(9);
+                break;
+            case "Sniper":
+                AudioManager.instance.PlayerSFX(10);
+                break;
+            case "Rocket Launcher":
+                AudioManager.instance.PlayerSFX(11);
+                break;
+            default:
+                // Optionally, log an error or warning if the gun type is unrecognized
+                
+                break;
+        }
+    }
+
 
     public void AddAmmo()
     {
@@ -202,11 +267,18 @@ public class GunSystem : MonoBehaviour
 
     private void Reload()
     {
+        if (reloading)
+        {
+            Debug.Log("Already reloading.");
+            return;
+        }
+
+        Debug.Log("Reload started.");
+        reloading = true;
+
         myAnimator.SetTrigger(gunAnimationName);
 
         AudioManager.instance.PlayerSFX(7);
-        
-        reloading = true;
 
         StartCoroutine(ReloadCoroutine());
     }
@@ -234,12 +306,34 @@ public class GunSystem : MonoBehaviour
         yield return new WaitForSeconds(timeBetweenShots);
 
         readyToShoot = true;
+
     }
 
     private void UpdateAmmoText()
     {
         myUICanvas.ammoText.SetText(bulletsAvailable + "/ " + magazineSize);
         myUICanvas.totalAmmoText.SetText("Rounds: " + totalBullets.ToString());
+    }
+
+    public void CancelReload()
+    {
+        if (reloading)
+        {
+            reloading = false;
+            // Stop the reload animation if there is one
+            myAnimator.ResetTrigger(gunAnimationName);
+            // Optionally, stop reload sound effect or play a sound effect for reload interruption
+            // AudioManager.instance.PlayerSFX(reloadCancelSFXIndex); // if you have a sound effect for cancelling reload
+            Debug.Log("Reload cancelled.");
+        }
+    }
+
+    public void CancelShotReset()
+    {
+        // Set readyToShoot to true when weapon is switched
+        readyToShoot = true;
+        StopCoroutine(ResetShot()); // Stop the ResetShot coroutine if it's running
+        Debug.Log("Shot reset cancelled.");
     }
 
 }
