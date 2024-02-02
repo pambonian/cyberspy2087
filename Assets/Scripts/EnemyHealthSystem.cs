@@ -7,6 +7,10 @@ public class EnemyHealthSystem : MonoBehaviour
     private int currentHealth;
     public int maxHealth;
 
+    public delegate void EnemyDamagedHandler();
+    public event EnemyDamagedHandler OnEnemyDamaged;
+
+
     EnemyUICanvasController healthBar;
 
     // Start is called before the first frame update
@@ -31,9 +35,20 @@ public class EnemyHealthSystem : MonoBehaviour
 
         healthBar.SetHealth(currentHealth);
 
-        if(currentHealth <=0)
+        // Notify any listeners (like the EnemyAI) that this enemy has taken damage
+        OnEnemyDamaged?.Invoke();
+
+        if (currentHealth <= 0)
         {
             Destroy(gameObject);
         }
+
+        // If I want a better enemy death system:
+        // if (currentHealth <= 0)
+        // {
+            // GetComponent<EnemyAI>()?.HandleDeath();
+            // Destroy(gameObject);
+        // }
+
     }
 }
