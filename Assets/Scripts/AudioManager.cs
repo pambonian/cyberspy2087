@@ -17,6 +17,8 @@ public class AudioManager : MonoBehaviour
 
     public void PlayerSFX(int sfxNumber)
     {
+        Debug.Log("Playing SFX number: " + sfxNumber);
+        Debug.Log($"Playing SFX number: {sfxNumber} - {SFXs[sfxNumber].name}");
         SFXs[sfxNumber].Stop();
         SFXs[sfxNumber].Play();
     }

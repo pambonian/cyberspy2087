@@ -35,12 +35,22 @@ public class EnemyAI : MonoBehaviour
 
 
 
+    // Being attacked by player
+    private EnemyHealthSystem enemyHealthSystem;
+    private bool playerShotMe = false;
+    public float timeUntilReset = 10f; // Time in seconds until the enemy stops chasing
+
+
+
     // Start is called before the first frame update
     void Start()
     {
         myAnimator = GetComponent<Animator>();
         player = FindObjectOfType<Player>().transform;
         myAgent = GetComponent<NavMeshAgent>();
+
+        enemyHealthSystem = GetComponent<EnemyHealthSystem>();
+        enemyHealthSystem.OnEnemyDamaged += OnEnemyDamaged;
     }
 
     // Update is called once per frame
@@ -49,21 +59,40 @@ public class EnemyAI : MonoBehaviour
         playerInChaseRange = Physics.CheckSphere(transform.position, chaseRange, whatIsPlayer);
         playerInAttackRange = Physics.CheckSphere(transform.position, attackRange, whatIsPlayer);
 
-        if (!playerInChaseRange && !playerInAttackRange)
+        if (!playerInChaseRange && !playerInAttackRange && !playerShotMe)
         {
             Guarding();
-        } 
-        if (playerInChaseRange && !playerInAttackRange) 
+        }
+        if ((playerInChaseRange && !playerInAttackRange) || playerShotMe)
         {
             ChasingPlayer();
         }
-        if(playerInChaseRange && playerInAttackRange)
+        if ((playerInChaseRange && playerInAttackRange) || (playerShotMe && playerInAttackRange))
         {
             AttackingPlayer();
         }
     }
 
-    
+    private void OnEnemyDamaged()
+    {
+        playerShotMe = true;
+        StopCoroutine("ResetPlayerShotMe"); // Stop the existing coroutine to prevent multiple resets
+        StartCoroutine("ResetPlayerShotMe");
+    }
+
+    IEnumerator ResetPlayerShotMe()
+    {
+        yield return new WaitForSeconds(timeUntilReset);
+        playerShotMe = false;
+    }
+
+    void OnDisable()
+    {
+        // Unsubscribe to avoid memory leaks
+        enemyHealthSystem.OnEnemyDamaged -= OnEnemyDamaged;
+    }
+
+
 
     private void Guarding()
     {
