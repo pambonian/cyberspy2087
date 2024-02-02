@@ -12,7 +12,15 @@ public class AudioManager : MonoBehaviour
 
     private void Awake()
     {
-        instance = this;
+        if (instance == null)
+        {
+            instance = this;
+            DontDestroyOnLoad(gameObject); // This line ensures the AudioManager isn't destroyed on scene load.
+        }
+        else if (instance != this)
+        {
+            Destroy(gameObject);
+        }
     }
 
     public void PlayerSFX(int sfxNumber)
@@ -26,5 +34,21 @@ public class AudioManager : MonoBehaviour
     public void StopBackgroundMusic()
     {
         backgroundMusic.Stop();
+    }
+
+    public void SetVolume(float volume)
+    {
+        if (backgroundMusic != null && backgroundMusic.isActiveAndEnabled)
+        {
+            backgroundMusic.volume = volume;
+        }
+
+        foreach (AudioSource sfx in SFXs)
+        {
+            if (sfx != null && sfx.isActiveAndEnabled)
+            {
+                sfx.volume = volume;
+            }
+        }
     }
 }
