@@ -21,7 +21,16 @@ public class PortalExit : MonoBehaviour
     {
         if(other.CompareTag("Player"))
         {
-            SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
+            StartCoroutine(LevelExitDelay());
+            Time.timeScale = 0.1f;
         }
+    }
+
+    IEnumerator LevelExitDelay()
+    {
+        yield return new WaitForSecondsRealtime(1f);
+
+        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
+        Time.timeScale = 1f;
     }
 }
