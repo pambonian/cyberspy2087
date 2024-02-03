@@ -56,6 +56,7 @@ public class Player : MonoBehaviour
         Jump();
         Crouching();
         SlideCounter();
+        HandleHookShotStart();
     }
 
     // crouching method
@@ -177,5 +178,10 @@ public class Player : MonoBehaviour
         {
             currentSliderTimer += Time.deltaTime;
         }
+    }
+
+    private void HandleHookShotStart()
+    {
+
     }
 }
