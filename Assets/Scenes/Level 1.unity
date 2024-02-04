@@ -11706,6 +11706,10 @@ PrefabInstance:
       value: b4
       objectReference: {fileID: 0}
     - target: {fileID: 100000, guid: 18ff28de6a3794d4b8b58d5e619e58df, type: 3}
+      propertyPath: m_TagString
+      value: Shootable
+      objectReference: {fileID: 0}
+    - target: {fileID: 100000, guid: 18ff28de6a3794d4b8b58d5e619e58df, type: 3}
       propertyPath: m_StaticEditorFlags
       value: 8
       objectReference: {fileID: 0}
@@ -12718,6 +12722,10 @@ PrefabInstance:
     - target: {fileID: 100000, guid: 70b775a4fde272245a4c2f4b5d09f941, type: 3}
       propertyPath: m_Name
       value: b7
+      objectReference: {fileID: 0}
+    - target: {fileID: 100000, guid: 70b775a4fde272245a4c2f4b5d09f941, type: 3}
+      propertyPath: m_TagString
+      value: Shootable
       objectReference: {fileID: 0}
     - target: {fileID: 100000, guid: 70b775a4fde272245a4c2f4b5d09f941, type: 3}
       propertyPath: m_StaticEditorFlags
@@ -15207,6 +15215,10 @@ PrefabInstance:
     - target: {fileID: 100000, guid: 18ff28de6a3794d4b8b58d5e619e58df, type: 3}
       propertyPath: m_Name
       value: b4 (1)
+      objectReference: {fileID: 0}
+    - target: {fileID: 100000, guid: 18ff28de6a3794d4b8b58d5e619e58df, type: 3}
+      propertyPath: m_TagString
+      value: Shootable
       objectReference: {fileID: 0}
     - target: {fileID: 100000, guid: 18ff28de6a3794d4b8b58d5e619e58df, type: 3}
       propertyPath: m_StaticEditorFlags
@@ -32565,6 +32577,10 @@ PrefabInstance:
       value: b1
       objectReference: {fileID: 0}
     - target: {fileID: 100000, guid: 8301c26097996ce4fa26f5e5847d888a, type: 3}
+      propertyPath: m_TagString
+      value: Shootable
+      objectReference: {fileID: 0}
+    - target: {fileID: 100000, guid: 8301c26097996ce4fa26f5e5847d888a, type: 3}
       propertyPath: m_StaticEditorFlags
       value: 8
       objectReference: {fileID: 0}
@@ -41307,6 +41323,10 @@ PrefabInstance:
       value: b5
       objectReference: {fileID: 0}
     - target: {fileID: 100000, guid: b2f2e96fef4a89340ae20580c0fb7739, type: 3}
+      propertyPath: m_TagString
+      value: Shootable
+      objectReference: {fileID: 0}
+    - target: {fileID: 100000, guid: b2f2e96fef4a89340ae20580c0fb7739, type: 3}
       propertyPath: m_StaticEditorFlags
       value: 8
       objectReference: {fileID: 0}
@@ -46691,6 +46711,14 @@ PrefabInstance:
       value: 8
       objectReference: {fileID: 0}
     - target: {fileID: -6476544507771647725, guid: 5d80358d002a4c84c870d5b3fef81c65, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: -6476544507771647725, guid: 5d80358d002a4c84c870d5b3fef81c65, type: 3}
+      propertyPath: m_TagString
+      value: Shootable
+      objectReference: {fileID: 0}
+    - target: {fileID: -6476544507771647725, guid: 5d80358d002a4c84c870d5b3fef81c65, type: 3}
       propertyPath: m_StaticEditorFlags
       value: 8
       objectReference: {fileID: 0}
@@ -46833,6 +46861,10 @@ PrefabInstance:
     - target: {fileID: 919132149155446097, guid: 5d80358d002a4c84c870d5b3fef81c65, type: 3}
       propertyPath: m_Name
       value: Scifi_Building_1
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 5d80358d002a4c84c870d5b3fef81c65, type: 3}
+      propertyPath: m_TagString
+      value: Shootable
       objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: 5d80358d002a4c84c870d5b3fef81c65, type: 3}
       propertyPath: m_StaticEditorFlags
@@ -63743,6 +63775,11 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1047770134}
   m_Mesh: {fileID: 4300008, guid: cccd7279ec1790c47bc498b9733ec83b, type: 3}
+--- !u!1 &1048353607 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 919132149155446097, guid: 5d80358d002a4c84c870d5b3fef81c65, type: 3}
+  m_PrefabInstance: {fileID: 989699782}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1050405417
 GameObject:
   m_ObjectHideFlags: 0
@@ -63787,6 +63824,10 @@ PrefabInstance:
     - target: {fileID: 100000, guid: 538f4cd67118aa743baf28b16f27e3b7, type: 3}
       propertyPath: m_Name
       value: b10
+      objectReference: {fileID: 0}
+    - target: {fileID: 100000, guid: 538f4cd67118aa743baf28b16f27e3b7, type: 3}
+      propertyPath: m_TagString
+      value: Shootable
       objectReference: {fileID: 0}
     - target: {fileID: 100000, guid: 538f4cd67118aa743baf28b16f27e3b7, type: 3}
       propertyPath: m_StaticEditorFlags
@@ -67519,6 +67560,10 @@ PrefabInstance:
     - target: {fileID: 100000, guid: 0b4c5917def15fa43b0b44f4f7cf1aab, type: 3}
       propertyPath: m_Name
       value: b2
+      objectReference: {fileID: 0}
+    - target: {fileID: 100000, guid: 0b4c5917def15fa43b0b44f4f7cf1aab, type: 3}
+      propertyPath: m_TagString
+      value: Shootable
       objectReference: {fileID: 0}
     - target: {fileID: 100000, guid: 0b4c5917def15fa43b0b44f4f7cf1aab, type: 3}
       propertyPath: m_StaticEditorFlags
@@ -101371,6 +101416,19 @@ Transform:
   m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: 5d80358d002a4c84c870d5b3fef81c65, type: 3}
   m_PrefabInstance: {fileID: 989699782}
   m_PrefabAsset: {fileID: 0}
+--- !u!65 &1935412338
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1048353607}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.06803416, y: 0.24023658, z: 0.06888892}
+  m_Center: {x: -0.0020169031, y: 0.13605933, z: 0.00017987825}
 --- !u!1 &1938223812
 GameObject:
   m_ObjectHideFlags: 0
@@ -107437,6 +107495,10 @@ PrefabInstance:
     - target: {fileID: 100000, guid: 2c694c40453654c4dbc22ed9db0b3729, type: 3}
       propertyPath: m_Name
       value: b6
+      objectReference: {fileID: 0}
+    - target: {fileID: 100000, guid: 2c694c40453654c4dbc22ed9db0b3729, type: 3}
+      propertyPath: m_TagString
+      value: Shootable
       objectReference: {fileID: 0}
     - target: {fileID: 100000, guid: 2c694c40453654c4dbc22ed9db0b3729, type: 3}
       propertyPath: m_StaticEditorFlags
