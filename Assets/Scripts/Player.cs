@@ -230,7 +230,14 @@ public class Player : MonoBehaviour
         // direction of movement
         Vector3 hookShotDirection = (hookShotPosition - transform.position).normalized;
 
-        float hookShotSpeedModifier = Vector3.Distance(transform.position, hookShotPosition);
+        
+
+        float hookShotMinSpeed = 12f, hookShotMaxSpeed = 50f;
+
+        float hookShotSpeedModifier = Mathf.Clamp(
+            Vector3.Distance(transform.position, hookShotPosition),
+            hookShotMinSpeed,
+            hookShotMaxSpeed);
 
         myController.Move(hookShotDirection * hookShotSpeed * hookShotSpeedModifier * Time.deltaTime);
 
