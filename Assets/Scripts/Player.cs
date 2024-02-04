@@ -268,7 +268,7 @@ public class Player : MonoBehaviour
         if(TestInputJump())
         {
             float extraMomentum = 40f;
-            flyingCharacterMomentum = hookShotDirection * hookShotSpeed * extraMomentum;
+            flyingCharacterMomentum = extraMomentum * hookShotSpeed * hookShotDirection;
 
             state = State.Normal;
             ResetGravity();
