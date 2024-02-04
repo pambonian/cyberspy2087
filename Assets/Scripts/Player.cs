@@ -45,8 +45,12 @@ public class Player : MonoBehaviour
     private Vector3 hookShotPosition;
     public float hookShotSpeed = 5f;
     private Vector3 flyingCharacterMomentum;
-    public Transform grapplingHook;
+    // public Transform grapplingHook;
     private float hookShotSize;
+    public GameObject grapplingHookPrefab;
+    private GameObject currentGrapplingHook;
+    public Transform grapplingHookSpawnPoint;
+
 
     // Player states
 
@@ -81,6 +85,8 @@ public class Player : MonoBehaviour
                 break;
 
             case State.HookShotThrow:
+                PlayerMovement();
+                CameraMovement();
                 ThrowHook();
                 break;
 
@@ -230,27 +236,66 @@ public class Player : MonoBehaviour
 
     private void HandleHookShotStart()
     {
-        if(TestInputDownHookShot())
+        if (TestInputDownHookShot())
         {
             RaycastHit hit;
 
-            if(Physics.Raycast(myCameraHead.position, myCameraHead.forward, out hit))
+            if (Physics.Raycast(myCameraHead.position, myCameraHead.forward, out hit))
             {
                 hitPointTransform.position = hit.point;
                 hookShotPosition = hit.point;
-                state = State.HookShotFlyingPlayer;
+
+                hookShotSize = 0f;
+
+                // Instantiate the grappling hook at the player's position
+                if (currentGrapplingHook != null) Destroy(currentGrapplingHook); // Destroy previous grappling hook if it exists
+                currentGrapplingHook = Instantiate(grapplingHookPrefab, grapplingHookSpawnPoint.position, grapplingHookSpawnPoint.rotation);
+
+
+                // Set the player's camera head as the parent of the grappling hook
+                currentGrapplingHook.transform.SetParent(grapplingHookSpawnPoint);
+
+
+                // Optionally, you can reset the local position and rotation of the grappling hook relative to the new parent:
+                currentGrapplingHook.transform.localPosition = Vector3.zero; // Or any specific position
+                currentGrapplingHook.transform.localRotation = Quaternion.identity; // Or any specific rotation
+
+                state = State.HookShotThrow;
             }
         }
     }
 
     private void ThrowHook()
     {
-        grapplingHook.LookAt(hookShotPosition);
+        if (currentGrapplingHook != null)
+        {
+            // Calculate the direction from the spawn point to the target.
+            Vector3 directionToTarget = (hookShotPosition - grapplingHookSpawnPoint.position).normalized;
 
-        float hookShotThrowSpeed = 10f;
-        hookShotSize += hookShotThrowSpeed * Time.deltaTime;
-        grapplingHook.localScale = new Vector3(1, 1, hookShotSize);
+            // Set the grappling hook to face the target.
+            currentGrapplingHook.transform.forward = directionToTarget;
+
+            // Calculate how much to scale or move the grappling hook this frame.
+            // Ensure this uses the correct axis. If the grappling hook extends along its local Z axis, for example:
+            float hookShotThrowSpeed = 500f;
+            hookShotSize += hookShotThrowSpeed * Time.deltaTime;
+
+            // If you're scaling the grappling hook, apply the scaling along the correct axis.
+            // If it extends along its local Z axis:
+            currentGrapplingHook.transform.localScale = new Vector3(1, 1, hookShotSize);
+
+            // If you're moving the grappling hook instead of scaling, move it along the directionToTarget.
+            // Example:
+            // currentGrapplingHook.transform.position += directionToTarget * hookShotThrowSpeed * Time.deltaTime;
+
+            // Check if the grappling hook has reached the target.
+            if (hookShotSize >= Vector3.Distance(grapplingHookSpawnPoint.position, hookShotPosition))
+            {
+                state = State.HookShotFlyingPlayer;
+            }
+        }
     }
+
 
     private void HandleHookShotMovement()
     {
@@ -267,7 +312,18 @@ public class Player : MonoBehaviour
 
         myController.Move(hookShotDirection * hookShotSpeed * hookShotSpeedModifier * Time.deltaTime);
 
-        if(Vector3.Distance(transform.position, hookShotPosition) < 2f)
+        if (Vector3.Distance(transform.position, hookShotPosition) < 2f || TestInputDownHookShot() || TestInputJump())
+        {
+            state = State.Normal;
+            ResetGravity();
+
+            if (currentGrapplingHook != null)
+            {
+                Destroy(currentGrapplingHook); // Destroy the grappling hook
+            }
+        }
+
+        if (Vector3.Distance(transform.position, hookShotPosition) < 2f)
         {
             state = State.Normal;
             ResetGravity();
