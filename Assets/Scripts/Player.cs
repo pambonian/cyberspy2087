@@ -40,22 +40,47 @@ public class Player : MonoBehaviour
     private float currentSliderTimer, maxSlideTime = 2f;
     public float slideSpeed = 30f;
 
+    // Hook shot
+    public Transform hitPointTransform;
+
+    // Player states
+
+    private State state;
+    private enum State {  Normal, HookShotFlyingPlayer }
+
     // Start is called before the first frame update
     void Start()
     {
         // get initial player body scale for crouching
         bodyScale = myBody.localScale;
         initialControllerHeight = myController.height;
+
+        state = State.Normal;
     }
 
     // Update is called once per frame
     void Update()
     {
-        PlayerMovement();
-        CameraMovement();
-        Jump();
-        Crouching();
-        SlideCounter();
+
+        switch(state)
+        {
+            case State.Normal:
+                PlayerMovement();
+                CameraMovement();
+                Jump();
+                Crouching();
+                SlideCounter();
+                HandleHookShotStart();
+                break;
+
+            case State.HookShotFlyingPlayer:
+                HandleHookShotMovement();
+                break;
+
+            default:
+                break;
+        }
+        
     }
 
     // crouching method
@@ -177,5 +202,24 @@ public class Player : MonoBehaviour
         {
             currentSliderTimer += Time.deltaTime;
         }
+    }
+
+    private void HandleHookShotStart()
+    {
+        if(Input.GetKeyDown(KeyCode.E))
+        {
+            RaycastHit hit;
+
+            if(Physics.Raycast(myCameraHead.position, myCameraHead.forward, out hit))
+            {
+                hitPointTransform.position = hit.point;
+                state = State.HookShotFlyingPlayer;
+            }
+        }
+    }
+
+    private void HandleHookShotMovement()
+    {
+
     }
 }
