@@ -233,5 +233,10 @@ public class Player : MonoBehaviour
         float hookShotSpeedModifier = Vector3.Distance(transform.position, hookShotPosition);
 
         myController.Move(hookShotDirection * hookShotSpeed * hookShotSpeedModifier * Time.deltaTime);
+
+        if(Vector3.Distance(transform.position, hookShotPosition) < 2f)
+        {
+            state = State.Normal;
+        }
     }
 }
