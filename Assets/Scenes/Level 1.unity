@@ -39592,7 +39592,7 @@ MonoBehaviour:
   reloading: 0
   aimPosition: {fileID: 1717168706}
   zoomAmount: 25
-  damageAmount: 12
+  damageAmount: 20
   gunName: Sniper
   rocketLauncher: 0
   pickupBulletAmount: 5
@@ -88993,7 +88993,7 @@ AudioSource:
   OutputAudioMixerGroup: {fileID: -2092736166306214182, guid: e83a21c7065944b4d8718252a10b3a79, type: 2}
   m_audioClip: {fileID: 8300000, guid: 4cf1819762b5578448b93e67d7b4f89e, type: 3}
   m_PlayOnAwake: 1
-  m_Volume: 0.2
+  m_Volume: 0.145
   m_Pitch: 1
   Loop: 1
   Mute: 0
