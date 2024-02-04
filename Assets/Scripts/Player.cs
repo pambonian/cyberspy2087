@@ -54,6 +54,8 @@ public class Player : MonoBehaviour
         // get initial player body scale for crouching
         bodyScale = myBody.localScale;
         initialControllerHeight = myController.height;
+
+        state = State.Normal;
     }
 
     // Update is called once per frame
