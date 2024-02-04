@@ -265,6 +265,8 @@ public class Player : MonoBehaviour
 
     private void HandleHookShotMovement()
     {
+        grapplingHook.LookAt(hookShotPosition);
+
 
         // direction of movement
         Vector3 hookShotDirection = (hookShotPosition - transform.position).normalized;
