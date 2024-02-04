@@ -18578,7 +18578,7 @@ MonoBehaviour:
   myCameraHead: {fileID: 1145313882}
   myAnimator: {fileID: 1114336266}
   mouseSensitivity: 500
-  jumpHeight: 4.5
+  jumpHeight: 20
   ground: {fileID: 1783915152}
   groundLayer:
     serializedVersion: 2
@@ -18588,7 +18588,7 @@ MonoBehaviour:
   crouchSpeed: 5
   slideSpeed: 7
   hitPointTransform: {fileID: 2012144856}
-  hookShotSpeed: 5
+  hookShotSpeed: 2
 --- !u!143 &1114336264
 CharacterController:
   m_ObjectHideFlags: 0

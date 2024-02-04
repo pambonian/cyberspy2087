@@ -205,7 +205,7 @@ public class Player : MonoBehaviour
 
         if(flyingCharacterMomentum.magnitude > 0f)
         {
-            float reductionAmount = 1f;
+            float reductionAmount = 4f;
             flyingCharacterMomentum -= reductionAmount * Time.deltaTime * flyingCharacterMomentum;
             if (flyingCharacterMomentum.magnitude > 1f)
             {
