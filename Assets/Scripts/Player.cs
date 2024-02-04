@@ -42,7 +42,7 @@ public class Player : MonoBehaviour
 
     // Hook shot
     public Transform hitPointTransform;
-
+    
     // Player states
 
     private State state;
