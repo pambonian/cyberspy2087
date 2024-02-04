@@ -267,8 +267,8 @@ public class Player : MonoBehaviour
 
         if(TestInputJump())
         {
-            float extraMomentum = 40f, jumpSpeedUp = 40f;
-            flyingCharacterMomentum = extraMomentum * hookShotSpeed * hookShotDirection;
+            float extraMomentum = 40f, jumpSpeedUp = 70f;
+            flyingCharacterMomentum += extraMomentum * hookShotSpeed * hookShotDirection;
             flyingCharacterMomentum += Vector3.up * jumpSpeedUp;
 
             state = State.Normal;
