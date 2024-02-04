@@ -225,6 +225,6 @@ public class Player : MonoBehaviour
 
     private void HandleHookShotMovement()
     {
-
+        Vector3 hookShotDirection = (hookShotPosition - transform.position).normalized;
     }
 }
