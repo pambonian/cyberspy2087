@@ -45,6 +45,7 @@ public class Player : MonoBehaviour
     private Vector3 hookShotPosition;
     public float hookShotSpeed = 5f;
     private Vector3 flyingCharacterMomentum;
+    public Transform grapplingHook;
 
     // Player states
 
