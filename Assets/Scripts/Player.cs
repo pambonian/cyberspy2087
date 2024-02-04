@@ -40,6 +40,9 @@ public class Player : MonoBehaviour
     private float currentSliderTimer, maxSlideTime = 2f;
     public float slideSpeed = 30f;
 
+    // Hook shot
+    public Transform hitPointTransform;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -182,6 +185,14 @@ public class Player : MonoBehaviour
 
     private void HandleHookShotStart()
     {
+        if(Input.GetKeyDown(KeyCode.E))
+        {
+            RaycastHit hit;
 
+            if(Physics.Raycast(myCameraHead.position, myCameraHead.forward, out hit))
+            {
+                hitPointTransform.position = hit.point;
+            }
+        }
     }
 }
