@@ -78,6 +78,7 @@ public class Player : MonoBehaviour
                 break;
 
             case State.HookShotFlyingPlayer:
+                CameraMovement();
                 HandleHookShotMovement();
                 break;
 
@@ -229,6 +230,8 @@ public class Player : MonoBehaviour
         // direction of movement
         Vector3 hookShotDirection = (hookShotPosition - transform.position).normalized;
 
-        myController.Move(hookShotDirection * hookShotSpeed * Time.deltaTime);
+        float hookShotSpeedModifier = Vector3.Distance(transform.position, hookShotPosition);
+
+        myController.Move(hookShotDirection * hookShotSpeed * hookShotSpeedModifier * Time.deltaTime);
     }
 }
