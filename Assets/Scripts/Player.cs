@@ -260,6 +260,7 @@ public class Player : MonoBehaviour
         if (hookShotSize >= Vector3.Distance(transform.position, hookShotPosition))
         {
             state = State.HookShotFlyingPlayer;
+            FindObjectOfType<CameraMove>().ZoomIn(100f);
         }
     }
 
@@ -318,6 +319,7 @@ public class Player : MonoBehaviour
 
     private void StopHookShot()
     {
+        FindObjectOfType<CameraMove>().ZoomOut();
         grapplingHook.gameObject.SetActive(false);
         state = State.Normal;
         ResetGravity();
