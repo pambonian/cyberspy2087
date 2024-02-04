@@ -42,7 +42,9 @@ public class Player : MonoBehaviour
 
     // Hook shot
     public Transform hitPointTransform;
-    
+    private Vector3 hookShotPosition;
+    public float hookShotSpeed = 5f;
+
     // Player states
 
     private State state;
