@@ -73,6 +73,10 @@ public class Player : MonoBehaviour
                 HandleHookShotStart();
                 break;
 
+            case State.HookShotFlyingPlayer:
+                HandleHookShotMovement();
+                break;
+
             default:
                 break;
         }
@@ -212,5 +216,10 @@ public class Player : MonoBehaviour
                 state = State.HookShotFlyingPlayer;
             }
         }
+    }
+
+    private void HandleHookShotMovement()
+    {
+
     }
 }
