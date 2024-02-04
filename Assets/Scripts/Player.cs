@@ -44,6 +44,7 @@ public class Player : MonoBehaviour
     public Transform hitPointTransform;
     private Vector3 hookShotPosition;
     public float hookShotSpeed = 5f;
+    private Vector3 flyingCharacterMomentum;
 
     // Player states
 
@@ -186,6 +187,8 @@ public class Player : MonoBehaviour
         myAnimator.SetFloat("PlayerSpeed", movement.magnitude);
         // Debug.Log(movement.magnitude);
 
+        movement += flyingCharacterMomentum * Time.deltaTime;
+
         myController.Move(movement);
 
        
@@ -251,6 +254,11 @@ public class Player : MonoBehaviour
             state = State.Normal;
             ResetGravity();
         }
+    }
+
+    private bool TestInputJump()
+    {
+        return Input.GetKeyDown(KeyCode.Space);
     }
 
     private bool TestInputDownHookShot()
