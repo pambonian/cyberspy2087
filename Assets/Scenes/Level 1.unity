@@ -67060,7 +67060,7 @@ MonoBehaviour:
   slideSpeed: 7
   hitPointTransform: {fileID: 1428689368}
   hookShotSpeed: 5
-  grapplingHook: {fileID: 0}
+  grapplingHook: {fileID: 1615450705}
 --- !u!143 &1114336264
 CharacterController:
   m_ObjectHideFlags: 0
@@ -67096,6 +67096,7 @@ Transform:
   - {fileID: 1783915152}
   - {fileID: 2023056829}
   - {fileID: 652496652}
+  - {fileID: 1615450705}
   m_Father: {fileID: 0}
   m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -89650,14 +89651,14 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1615450704}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: -0.229, y: 1.557, z: 0.402}
   m_LocalScale: {x: 1, y: 1, z: 0.91}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 1312834967}
-  m_Father: {fileID: 0}
-  m_RootOrder: 14
+  m_Father: {fileID: 1114336265}
+  m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1616612788
 GameObject:
