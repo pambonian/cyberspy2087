@@ -51,7 +51,7 @@ public class Player : MonoBehaviour
     // Player states
 
     private State state;
-    private enum State {  Normal, HookShotFlyingPlayer }
+    private enum State {  Normal, HookShotFlyingPlayer, HookShotThrow }
 
     // Start is called before the first frame update
     void Start()
@@ -78,6 +78,10 @@ public class Player : MonoBehaviour
                 Crouching();
                 SlideCounter();
                 HandleHookShotStart();
+                break;
+
+            case State.HookShotThrow:
+                ThrowHook();
                 break;
 
             case State.HookShotFlyingPlayer:
