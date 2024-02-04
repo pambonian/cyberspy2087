@@ -202,6 +202,16 @@ public class Player : MonoBehaviour
         }
 
         myController.Move(velocity);
+
+        if(flyingCharacterMomentum.magnitude > 0f)
+        {
+            float reductionAmount = 1f;
+            flyingCharacterMomentum -= reductionAmount * Time.deltaTime * flyingCharacterMomentum;
+            if (flyingCharacterMomentum.magnitude > 1f)
+            {
+                flyingCharacterMomentum = Vector3.zero;
+            }
+        }
     }
 
     private void SlideCounter()
@@ -253,6 +263,16 @@ public class Player : MonoBehaviour
         if(TestInputDownHookShot()) {
             state = State.Normal;
             ResetGravity();
+        }
+
+        if(TestInputJump())
+        {
+            float extraMomentum = 40f;
+            flyingCharacterMomentum = hookShotDirection * hookShotSpeed * extraMomentum;
+
+            state = State.Normal;
+            ResetGravity();
+
         }
     }
 
