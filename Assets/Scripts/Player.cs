@@ -228,5 +228,7 @@ public class Player : MonoBehaviour
 
         // direction of movement
         Vector3 hookShotDirection = (hookShotPosition - transform.position).normalized;
+
+        myController.Move(hookShotDirection * hookShotSpeed * Time.deltaTime);
     }
 }
