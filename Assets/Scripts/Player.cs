@@ -217,6 +217,7 @@ public class Player : MonoBehaviour
             if(Physics.Raycast(myCameraHead.position, myCameraHead.forward, out hit))
             {
                 hitPointTransform.position = hit.point;
+                hookShotPosition = hit.point;
                 state = State.HookShotFlyingPlayer;
             }
         }
