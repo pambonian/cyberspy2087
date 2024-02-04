@@ -211,7 +211,7 @@ public class Player : MonoBehaviour
 
     private void HandleHookShotStart()
     {
-        if(Input.GetKeyDown(KeyCode.E))
+        if(TestInputDownHookShot())
         {
             RaycastHit hit;
 
@@ -246,6 +246,16 @@ public class Player : MonoBehaviour
             state = State.Normal;
             ResetGravity();
         }
+
+        if(TestInputDownHookShot()) {
+            state = State.Normal;
+            ResetGravity();
+        }
+    }
+
+    private bool TestInputDownHookShot()
+    {
+        return Input.GetKeyDown(KeyCode.E);
     }
 
     private void ResetGravity()
