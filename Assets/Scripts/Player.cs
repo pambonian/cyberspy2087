@@ -43,6 +43,11 @@ public class Player : MonoBehaviour
     // Hook shot
     public Transform hitPointTransform;
 
+    // Player states
+
+    private State state;
+    private enum State {  Normal }
+
     // Start is called before the first frame update
     void Start()
     {
