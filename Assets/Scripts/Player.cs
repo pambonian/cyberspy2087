@@ -244,6 +244,12 @@ public class Player : MonoBehaviour
         if(Vector3.Distance(transform.position, hookShotPosition) < 2f)
         {
             state = State.Normal;
+            ResetGravity();
         }
+    }
+
+    private void ResetGravity()
+    {
+        velocity.y = 0f;
     }
 }
