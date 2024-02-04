@@ -46,6 +46,7 @@ public class Player : MonoBehaviour
     public float hookShotSpeed = 5f;
     private Vector3 flyingCharacterMomentum;
     public Transform grapplingHook;
+    private float hookShotSize;
 
     // Player states
 
@@ -236,6 +237,15 @@ public class Player : MonoBehaviour
                 state = State.HookShotFlyingPlayer;
             }
         }
+    }
+
+    private void ThrowHook()
+    {
+        grapplingHook.LookAt(hookShotPosition);
+
+        float hookShotThrowSpeed = 10f;
+        hookShotSize += hookShotThrowSpeed * Time.deltaTime;
+        grapplingHook.localScale = new Vector3(1, 1, hookShotSize);
     }
 
     private void HandleHookShotMovement()
