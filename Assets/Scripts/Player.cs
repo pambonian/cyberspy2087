@@ -42,7 +42,9 @@ public class Player : MonoBehaviour
 
     // Hook shot
     public Transform hitPointTransform;
-    
+    private Vector3 hookShotPosition;
+    public float hookShotSpeed = 5f;
+
     // Player states
 
     private State state;
@@ -76,6 +78,7 @@ public class Player : MonoBehaviour
                 break;
 
             case State.HookShotFlyingPlayer:
+                CameraMovement();
                 HandleHookShotMovement();
                 break;
 
@@ -208,13 +211,14 @@ public class Player : MonoBehaviour
 
     private void HandleHookShotStart()
     {
-        if(Input.GetKeyDown(KeyCode.E))
+        if(TestInputDownHookShot())
         {
             RaycastHit hit;
 
             if(Physics.Raycast(myCameraHead.position, myCameraHead.forward, out hit))
             {
                 hitPointTransform.position = hit.point;
+                hookShotPosition = hit.point;
                 state = State.HookShotFlyingPlayer;
             }
         }
@@ -223,5 +227,39 @@ public class Player : MonoBehaviour
     private void HandleHookShotMovement()
     {
 
+        // direction of movement
+        Vector3 hookShotDirection = (hookShotPosition - transform.position).normalized;
+
+        
+
+        float hookShotMinSpeed = 12f, hookShotMaxSpeed = 50f;
+
+        float hookShotSpeedModifier = Mathf.Clamp(
+            Vector3.Distance(transform.position, hookShotPosition),
+            hookShotMinSpeed,
+            hookShotMaxSpeed);
+
+        myController.Move(hookShotDirection * hookShotSpeed * hookShotSpeedModifier * Time.deltaTime);
+
+        if(Vector3.Distance(transform.position, hookShotPosition) < 2f)
+        {
+            state = State.Normal;
+            ResetGravity();
+        }
+
+        if(TestInputDownHookShot()) {
+            state = State.Normal;
+            ResetGravity();
+        }
+    }
+
+    private bool TestInputDownHookShot()
+    {
+        return Input.GetKeyDown(KeyCode.E);
+    }
+
+    private void ResetGravity()
+    {
+        velocity.y = 0f;
     }
 }

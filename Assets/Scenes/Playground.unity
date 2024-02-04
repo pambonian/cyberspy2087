@@ -18588,6 +18588,7 @@ MonoBehaviour:
   crouchSpeed: 5
   slideSpeed: 7
   hitPointTransform: {fileID: 2012144856}
+  hookShotSpeed: 5
 --- !u!143 &1114336264
 CharacterController:
   m_ObjectHideFlags: 0
