@@ -59,12 +59,22 @@ public class Player : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        PlayerMovement();
-        CameraMovement();
-        Jump();
-        Crouching();
-        SlideCounter();
-        HandleHookShotStart();
+
+        switch(state)
+        {
+            case State.Normal:
+                PlayerMovement();
+                CameraMovement();
+                Jump();
+                Crouching();
+                SlideCounter();
+                HandleHookShotStart();
+                break;
+
+            default:
+                break;
+        }
+        
     }
 
     // crouching method
