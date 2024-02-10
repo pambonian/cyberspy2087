@@ -8,7 +8,7 @@ Welcome to the repository of **Cyberspy: 2087**, a cutting-edge sci-fi FPS shoot
 
 - [Download Cyberspy: 2087](#)
 
-*Note: The game is in demo phase and is intended as a demonstration of FPS features in Unity. It does not feature a complete game loop and ends after level 3.*
+*Note: The game is a feature showcase and is intended as a demonstration of FPS features in Unity. It does not feature a complete game loop and ends after level 3.*
 
 ## About the Game
 
