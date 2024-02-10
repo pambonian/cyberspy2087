@@ -6,7 +6,7 @@ Welcome to the repository of **Cyberspy: 2087**, a cutting-edge sci-fi FPS shoot
 
 **Cyberspy: 2087** is currently only available on Windows. You can download the game demo from the following link:
 
-- [Download Cyberspy: 2087](#)
+- [Download Cyberspy: 2087]([#](https://github.com/pambonian/cyberspy2087/releases/download/v1_0_0/Cyberspy2087_v1_0_0.zip))
 
 *Note: The game is a feature showcase and is intended as a demonstration of FPS features in Unity. It does not feature a complete game loop and ends after level 3.*
 
