@@ -1,10 +1,10 @@
 # Cyberspy: 2087
 
-Welcome to the repository of **Cyberspy: 2087**, a cutting-edge sci-fi FPS shooter demo that immerses you in the cyberpunk world of the year 2087. Designed as a showcase for FPS features within the Unity engine, this project is a testament to the potential for immersive gameplay and interactive environments in a futuristic setting.
+Welcome to the repository of **Cyberspy: 2087**, a cutting-edge sci-fi FPS shooter demo that immerses you in the cyberpunk world of the year 2087. Designed as a showcase for FPS features within the Unity engine, this project is a showcase for the potential application of immersive gameplay and interactive environments in a 3D first-person shooter game.
 
 ## Download and Installation
 
-**Cyberspy: 2087** is currently set up to run on Windows. You can download the game demo from the following placeholder link:
+**Cyberspy: 2087** is currently only available on Windows. You can download the game demo from the following link:
 
 - [Download Cyberspy: 2087](#)
 
