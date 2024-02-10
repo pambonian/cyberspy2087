@@ -44,12 +44,5 @@ The game is designed with intuitive controls to ensure a seamless gameplay exper
 - **C**: Crouch (Slide when running)
 - **Esc**: Open Menu
 
-## Feedback and Contributions
 
-We welcome your feedback and contributions to **Cyberspy: 2087**! If you have ideas for improvements, encounter any issues, or want to contribute to the development, please feel free to open an issue or submit a pull request.
 
-## License
-
-This project is licensed under the MIT License - see the LICENSE file for details.
-
-Thank you for exploring **Cyberspy: 2087**. Dive into the cyberpunk world of 2087 and test your skills in this FPS showcase!
