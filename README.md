@@ -12,7 +12,7 @@ Welcome to the repository of **Cyberspy: 2087**, a cutting-edge sci-fi FPS shoot
 
 ## About the Game
 
-**Cyberspy: 2087** takes you through a journey across three meticulously crafted levels, each hidden behind a secret door that players must discover to progress. Although the game concludes at level 3, the journey offers a taste of a larger, envisioned world brimming with cybernetic enhancements and high-tech weaponry.
+**Cyberspy: 2087** takes you through a journey across three levels, each hidden behind a secret door that players must locate in order to progress between levels. Although the game concludes at level 3, the journey offers a taste of a larger, envisioned world brimming with cybernetic enhancements and high-tech weaponry.
 
 ### Features
 
