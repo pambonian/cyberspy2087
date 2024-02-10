@@ -26,6 +26,10 @@ Welcome to the repository of **Cyberspy: 2087**, a cutting-edge sci-fi FPS shoot
 - **Advanced Mobility**: Utilize the Grappleshot to navigate the environment with unprecedented freedom, flinging yourself to any visible point.
 - **Engaging Combat**: Face off against challenges that test your aim, reflexes, and tactical thinking in a cyberpunk landscape.
 
+<p align="center">
+  <img src="https://github.com/pambonian/cyberspy2087/blob/master/Assets/Game%20Images/combat_view.jpg" width="600" alt="Combat View">
+</p>
+
 ### Weapons and Pickups
 
 - **Pistol**: Your reliable sidearm when everything else runs dry.
@@ -33,6 +37,10 @@ Welcome to the repository of **Cyberspy: 2087**, a cutting-edge sci-fi FPS shoot
 - **Sniper**: For those who prefer precision over brute force.
 - **Rocket Launcher**: The ultimate equalizer, for when you need to make a big impact.
 - **Health and Ammo Pickups**: Scattered throughout the levels to keep you in the fight.
+
+<p align="center">
+  <img src="https://github.com/pambonian/cyberspy2087/blob/master/Assets/Game%20Images/ads_view.jpg" width="600" alt="ADS View">
+</p>
 
 ## Controls
 
